@@ -1,0 +1,24 @@
+---
+layout: post
+title: The Setup
+tags: Personal, Trendy
+excerpt: This is a post inspired by <a href="http://usesthis.com">The Setup</a>, a website filled with interviews dedicated to finding out how prominent designers and developers use to get their work done. Learn more about the software and hardware I use.
+---
+
+[The Setup](http://usesthis.com/) is a website filled with interviews dedicated to finding out how prominent designers and developers use to get their work done. My career has only just begun, but I thought I'd share what I use.
+
+### Hardware
+
+The [15" MacBook Pro](http://www.apple.com/macbookpro/) has been my trusty companion for the last few years of my life. The flexibility and efficiency the Mac has gave me helped me succeed through 4 years at a tough engineering school. During school, I was surprised to see near 80% of the professors in the software engineering department use Macs, and would have not taken the job if they weren't allowed to. Now I can see why.
+
+At home and work I operate on a [27" iMac](http://www.apple.com/imac/). The resolution, sharpness and colours from this display are the best I've ever seen, and doing my daily work on them now is an enjoyable experience.
+
+All my input devices are wireless. I prefer wireless for minimizing clutter on my desktop. 
+
+### Software
+
+I switched to [Mac OS X](http://www.apple.com/macosx/) in 2009 after using Windows XP and [various](http://www.gentoo.org/) [flavours](http://www.ubuntu.com/) of [Linux](http://www.debian.org/). The Mac community for developing in iOS is partially why I chose to switch permanently, especially after seeing my professors rant and rave about the operating system. I've never looked back.
+
+All of the blogging and developing I do happens primarily in [TextMate](http://macromates.com/). When I'm feeling frisky, I'll give ol' [Xcode](http://developer.apple.com/tools/xcode/) a run, and create some memory errors. I use [iTerm](http://iterm.com) with zsh and some heavily modified [scripts](http://github.com/dpick/) for absolutely everything. I use [Reeder](http://reeder.com) for my daily RSS feeds, and use [Gmail](http://gmail.com) for all of my busy work. Naturally, [Photoshop CS5](http://adobe.com) is used on a daily basis for any and all of my artistic needs.
+
+This site is run on [Jekyll](http://jekyllrb.com), a static-site generator, turning markdown posts into what you see right now, using Sinatra/Ruby. I use [TypeKit](http://typekit.com) for all of the fonts, and the one you are most likely seeing is _Proxima Nova_. The site was built around the [HTML5Boilerplate](http://html5boilerplate.com), using [jQuery](http://jquery.com) and some custom scripts.

@@ -1,0 +1,4 @@
+pygments: true
+markdown: rdiscount
+permalink: pretty
+exclude: ['Rakefile', 'README']
