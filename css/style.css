@@ -57,6 +57,30 @@ input:invalid, textarea:invalid { background-color: #f0dddd; }
 table { border-collapse: collapse; border-spacing: 0; }
 td { vertical-align: top; }
 
-/* styles */
+/* styles */ 
+html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video{border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent;margin:0;padding:0;}
+a{font-size:100%;vertical-align:baseline;background:transparent;color:#fff;text-decoration:none;margin:0;padding:0;}
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block;}
+nav ul{list-style:none;}
+ins{background-color:#ff9;color:#000;text-decoration:none;}
+mark{background-color:#ff9;color:#000;font-style:italic;font-weight:700;}
+del{text-decoration:line-through;}
+abbr[title],dfn[title]{border-bottom:1px dotted;cursor:help;}
+table{border-collapse:collapse;border-spacing:0;}
+hr{display:block;height:1px;border:0;border-top:1px solid #ccc;margin:1em 0;padding:0;}
+input,select{vertical-align:middle;}
 
+body{font: 62.5% "Helvetica Neue", Helvetica, Geneva, Arial, Verdana, sans-serif;color: #313131;background:url(../img/main.jpg) repeat;text-rendering:optimizelegibility;height:100%;}
+.wrap{width:990px;margin:0 auto;}
+a:hover{text-decoration:underline;}
+.hr{width:100%;height:10px;background:#e4e2da;display:block;}
+p{font-size:12px;font-style:italic;line-height:1.4;margin-bottom:12px;} 
+header{background:url(../img/black_denim.png) top center repeat;height:214px;width:100%;z-index:500;}
+header .wrap{position:relative;height:863px;z-index:0;background:url(../img/will.png) no-repeat center top}    
+h1{height:113px;width:266px;display:block;top:60px;position:relative;left:10px;overflow:hidden;}
+h1 a{background:url(../img/tlw.png) 0 0 no-repeat;display:block;width:100%;height:100%;text-indent:-9999px;outline:none;z-index:100;position:relative;}
+#primary ul{float:right;display:block;width:600px;height:45px;margin-top:32px;}
+#primary ul li{float:right;display:block;text-shadow:#21272e 0 1px 1px;padding:0 15px;}
+#primary ul li a{float:left;display:block;color:#FFF;text-decoration:none;font-size:24px;border-bottom:2px solid transparent;line-height:30px;font-weight:500;}
+#container{width:100%;background:url(../img/main.jpg) repeat top center;z-index:1;position:relative;height:1000px;}
 
