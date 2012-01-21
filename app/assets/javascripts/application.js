@@ -5,3 +5,7 @@
 // the compiled file.
 //
 //= require_tree .
+
+$(window).load(function() {
+  $("#slider").orbit({directionalNav: false, animationSpeed: 1200, advanceSpeed: 5000}); 
+});
