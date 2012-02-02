@@ -88,6 +88,7 @@ header {
     display: block;
     height: 100%;
   }
+  &:hover { opacity: 0.8 }
 }
 
 
@@ -116,73 +117,46 @@ header {
 
 #social { position:absolute; width: 100%; z-index: 100; }
 #social nav {
-  top: -60px;
+  top: -90px;
   position: relative;
   margin: 0 auto;
-  margin-left: 75px;
+  margin-left: 175px;
   li {
-    opacity: 0.7;
+    opacity: 0.1;
     float: left;
-    width: 100px;
-    height: 45px;
     text-indent: -999em;
-    background: url(/assets/icons.png) 0 -45px;
     margin: 0 30px;
-    &:hover { opacity: 1 }
+    width: 64px;
+    height: 64px;
+    &:hover { opacity: 0.2 }
     a {
       display: block;
-      height: 45px;
     }
   }
 }
 
 #social nav li.soundcloud a,
 #social nav li.soundcloud {
-    background-position: -25px -59px;
-    width: 101px;
+  background: url(/assets/social/soundcloud.png) no-repeat;
 }
 #social nav li.lastfm a,
 #social nav li.lastfm {
- background-position: -149px -58px;
-    width: 85px;
+  background: url(/assets/social/lastfm.png) no-repeat;
 }
-#social nav li.bandsintown a,
-#social nav li.bandsintown {
- background-position: -262px -52px;
-    width: 98px;
-}
-#social nav li.tumblr a,
-#social nav li.tumblr {
- background-position: -383px -58px;
-    width: 108px;
-}
-#social nav li.ilike a,
-#social nav li.ilike {
-  background-position: -509px -57px;
-    width: 62px;
-}
-#social nav li.reverbnation a,
-#social nav li.reverbnation {
- background-position: -586px -56px;
-    width: 164px;
-}
-#social nav li.bandcamp a,
-#social nav li.bandcamp {
-  background-position: -782px -56px;
-    width: 145px;
-}
-
 #social nav li.facebook a,
 #social nav li.facebook {
-    background-position: -151px -152px;
-    width: 95px;
+  background: url(/assets/social/facebook.png) no-repeat;
 }
 
 #social nav li.twitter a,
 #social nav li.twitter {
-    background-position: -716px -152px;
-    width: 88px;
+  background: url(/assets/social/twitter.png) no-repeat;
 }
+
+#social nav li.email a,
+#social nav li.email {
+  background: url(/assets/social/email.png) no-repeat;
+}   
 
 .ribbon{
   width: 210px;

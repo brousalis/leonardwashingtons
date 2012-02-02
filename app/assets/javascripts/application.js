@@ -8,4 +8,5 @@
 
 $(window).load(function() {
   $("#slider").orbit({directionalNav: false, animationSpeed: 1200, advanceSpeed: 5000}); 
+  $("#social").hide().fadeIn(1000);
 });
