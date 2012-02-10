@@ -1,0 +1,61 @@
+.columns {
+  float:left;
+  width:1008px;
+  margin:0 0 0 -20px;
+  overflow:hidden;
+
+  .column {
+    float:left;
+    width:287px;
+    min-height:150px;
+    height:auto !important;
+    height:150px;
+    margin:0 0 0 28px;
+    color:#666;
+
+    h2 {    
+      font-family:  proxima-nova-extra-condensed-1;
+      text-transform:  uppercase;
+      font-weight: 500;
+      font-size: 34px; 
+      background: black;
+      text-align: center;
+      margin-bottom: 0;
+      border-radius: 8px 8px 0px 0px;
+      padding:3px 0px;
+      color: #549c95;
+      span { color: white; }
+    }
+    .content {
+      &:last-child p { border-radius: 0 0 8px 8px; }
+      h3 { margin: 2px 0 0 0; padding: 12px 10px 0px 10px; font-weight: 500; color: #fff; opacity: 0.5; background: black; } 
+      p { margin: 0; padding: 5px 10px 8px 10px; font: 0.9em "proxima-nova-1","proxima-nova-2"; line-height: 20px; background-color: black; opacity: 0.5; }
+      span { color: #aaa; }
+    }
+
+    #album {
+      .artwork {
+        position: relative;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 30px;
+        padding-bottom: 24px; 
+        img { margin-left: 3px; }
+        a:hover img { 
+          @include transition(all ease 0.2s);
+          @include box-shadow();
+          position: relative; top: 1px;
+        }
+      }
+    } 
+    #player {
+      h2 { background: #fff; }
+      .artwork img {
+        background:#fff;
+        border-radius: 8px;
+        @include box-shadow(0px 1px 5px rgba(0,0,0,.75));
+        display: block;
+      }
+    }
+  }
+}
