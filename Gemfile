@@ -36,5 +36,6 @@ group :test do
   gem 'turn', '0.8.2', :require => false
 end
 gem "devise"
+gem "therubyracer"
 gem "jquery-rails"
 gem "haml", ">= 3.0.0"
