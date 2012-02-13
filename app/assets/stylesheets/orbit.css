@@ -1,4 +1,4 @@
-/* CSS for jQuery Orbit Plugin 1.2.3
+/* CSS for jQuery Orbit Plugin 1.3.0
  * www.ZURB.com/playground
  * Copyright 2010, ZURB
  * Free to use under the MIT license.
@@ -8,14 +8,14 @@
  
 /* PUT IN YOUR SLIDER ID AND SIZE TO MAKE LOAD BEAUTIFULLY
    ================================================== */
-#featured { 
-	width: 940px;
-	height: 450px;
-	background: #000 url('/assets/loading.gif') no-repeat center center;
-	overflow: hidden; }
-#featured>img,  
-#featured>div,
-#featured>a { display: none; }
+#caseStudies { 
+  width: 1000px;
+  height: 210px;
+  background: #fff url('orbit/loading.gif') no-repeat center center;
+  overflow: hidden; }
+#caseStudies>img,  
+#caseStudies>div,
+#caseStudies>a { display: none; }
 
 
 
@@ -33,12 +33,16 @@ div.orbit {
     height: 1px;
     position: relative;
     overflow: hidden }
+    
+div.orbit.with-bullets {
+    margin-bottom: 40px;
+}
 
 div.orbit>img {
     position: absolute;
     top: 0;
     left: 0;
-    display: none; }
+    /* display: none; */ }
 
 div.orbit>a {
     border: none;
@@ -79,7 +83,7 @@ span.rotator {
     position: absolute;
     top: 0;
     left: -20px;
-    background: url('/assets/rotator-black.png') no-repeat;
+    background: url(orbit/rotator-black.png) no-repeat;
     z-index: 3; }
 
 span.mask {
@@ -98,7 +102,7 @@ span.rotator.move {
 span.mask.move {
     width: 40px;
     left: 0;
-    background: url('/assets/timer-black.png') repeat 0 0; }
+    background: url(orbit/timer-black.png) repeat 0 0; }
 
 span.pause {
     display: block;
@@ -107,12 +111,12 @@ span.pause {
     position: absolute;
     top: 0;
     left: 0;
-    background: url('/assets/pause-black.png') no-repeat;
+    background: url(orbit/pause-black.png) no-repeat;
     z-index: 4;
     opacity: 0; }
 
 span.pause.active {
-    background: url('/assets/pause-black.png') no-repeat 0 -40px }
+    background: url(orbit/pause-black.png) no-repeat 0 -40px }
 
 div.timer:hover span.pause,
 span.pause.active {
@@ -131,8 +135,8 @@ span.pause.active {
     background: rgba(0,0,0,.6);
     z-index: 1000;
     color: #fff;
-	text-align: center;
-	padding: 7px 0;
+  text-align: center;
+  padding: 7px 0;
     font-size: 13px;
     position: absolute;
     right: 0;
@@ -157,11 +161,11 @@ div.slider-nav span {
     cursor: pointer; }
 
 div.slider-nav span.right {
-    background: url('/assets/right-arrow.png');
+    background: url(orbit/right-arrow.png);
     right: 0; }
 
 div.slider-nav span.left {
-    background: url('/assets/left-arrow.png');
+    background: url(orbit/left-arrow.png);
     left: 0; }
 
 /* BULLET NAV
@@ -171,9 +175,9 @@ div.slider-nav span.left {
     position: absolute;
     z-index: 1000;
     list-style: none;
-    bottom: -40px;
+    bottom: -50px;
     left: 50%;
-	margin-left: -50px;
+    margin-left: -50px;
     padding: 0; }
 
 .orbit-bullets li {
@@ -182,7 +186,7 @@ div.slider-nav span.left {
     cursor: pointer;
     color: #999;
     text-indent: -9999px;
-    background: url('/assets/bullets.jpg') no-repeat 4px 0;
+    background: url(orbit/bullets.jpg) no-repeat 4px 0;
     width: 13px;
     height: 12px;
     overflow: hidden; }
@@ -194,8 +198,28 @@ div.slider-nav span.left {
 .orbit-bullets li.has-thumb {
     background: none;
     width: 100px;
-    height: 75px; }
+    height: 75px; } }
 
 .orbit-bullets li.active.has-thumb {
     background-position: 0 0;
     border-top: 2px solid #000; }
+    
+/* FLUID LAYOUT
+   ================================================== */
+.orbit-wrapper.fluid .orbit .fluid-placeholder {
+    visibility: hidden;
+    position: static;
+    display: block;
+    width: 100%; }
+
+.orbit-wrapper.fluid .orbit, .orbit-wrapper.fluid { 
+    width: 100% !important; }
+
+.orbit-wrapper.fluid .orbit-bullets {
+    position: absolute;
+    z-index: 1000;
+    list-style: none;
+    bottom: -50px;
+    left: 50%;
+    margin-left: -50px;
+    padding: 0; }

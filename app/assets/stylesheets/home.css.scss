@@ -21,41 +21,163 @@
       background: black;
       text-align: center;
       margin-bottom: 0;
-      border-radius: 8px 8px 0px 0px;
+      border-radius: $border $border 0px 0px;
       padding:3px 0px;
       color: #549c95;
-      span { color: white; }
+      span { color: white; font-weight: 400;}
     }
     .content {
-      &:last-child p { border-radius: 0 0 8px 8px; }
-      h3 { margin: 2px 0 0 0; padding: 12px 10px 0px 10px; font-weight: 500; color: #fff; opacity: 0.5; background: black; } 
-      p { margin: 0; padding: 5px 10px 8px 10px; font: 0.9em "proxima-nova-1","proxima-nova-2"; line-height: 20px; background-color: black; opacity: 0.5; }
-      span { color: #aaa; }
+      cursor: pointer;
+      @include transition(opacity 0.3s linear); 
+      background-color: black; opacity: 0.5;  
+      &:last-child { border-radius: 0 0 $border $border; }
+      &:hover { opacity: 0.7; @include transition(opacity 0.3s linear); }
+      h3 { margin: 1px 0 0 0; padding: 13px 15px 4px 15px; font-weight: 500; color: #fff; span { float: right; font-size: 0.8em; text-transform: uppercase; opacity: 0.5; margin-top: 4px;} }
+      p { margin: 0; padding: 7px 15px 15px 15px; font: 0.9em "proxima-nova-1","proxima-nova-2"; line-height: 20px; }
+      span { color: #aaa; font-weight: 300; }
+    }
+  }
+
+  #album {
+    position: relative;
+    width: 282px;
+    cursor: pointer;
+    .artwork {
+      position: relative;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 30px;
+      padding-bottom: 24px; 
+      span {
+        position: absolute;
+        top: 1px;
+        right: 0;
+        bottom: 0;
+        left: 3px;
+        width: 282px;
+        border-radius: $border;
+      }
+      img { 
+        border-radius: $border;
+        display: block;
+        @include box-shadow();
+        border: 1px solid #000;
+      }
+    }
+    &:active { position: relative; top: 1px; }
+    &:hover .buy { opacity: 0.8; @include transition(all 0.3s linear);}
+    .buy { 
+      @include transition(all 0.3s linear);
+      position: absolute; bottom: 40px; left: 70px;
+      background: #000; opacity: 0.8;
+      text-transform: uppercase;
+      padding: 5px 10px;
+      opacity: 0;
+      font-family:  proxima-nova-extra-condensed-1, proxima-nova-extra-condensed-2;
+      span { color: #549c95; }
+    }
+      
+  }  
+  #player {
+    padding-top: 30px;
+    h2 { background: #fff; }
+  }
+}
+
+$show-height: 120px;
+$show-width: 597px;
+.shows {
+  float:left;
+  margin: 8px 0px 6px 8px;
+
+  article {
+    float: left;
+    width: $show-width;
+    min-height:$show-height;
+    height:auto !important;
+    height:$show-height;
+    background:#111;
+    cursor: pointer; 
+    margin-bottom: 2px;
+    @include transition(all 0.3s linear);
+
+    &:first-child { @include border-radius($border $border 0px 0px); }
+    &:first-child img, &:first-child .overlay { @include border-radius($border 0px 0px 0px); }
+    &:last-child { @include border-radius(0px 0px $border $border); }
+    &:last-child img, &:last-child .overlay { @include border-radius(0px 0px 0px $border); }
+    &:hover { background: #000; @include transition(all 0.3s linear); }
+    &:hover .overlayDate { color: #fdf700; @include transition(all 0.3s linear);}
+
+    .image{
+      float:left;
+      position:relative;
+      width:170px;
+      height: $show-height;
+      img { width: 170px; height: $show-height + 4; }
+      a {
+        display:block;
+        position:absolute;
+        top:0;
+        left:0;
+        width:100%;
+        height:100%;
+        z-index:10;
+        font-size:0;
+        line-height:0;
+        background:url(/assets/1px-transparent.png) no-repeat 0 0;
+        text-indent:-9999px;
+      }
     }
 
-    #album {
-      .artwork {
-        position: relative;
-        margin-left: auto;
-        margin-right: auto;
-        margin-top: 30px;
-        padding-bottom: 24px; 
-        img { margin-left: 3px; }
-        a:hover img { 
-          @include transition(all ease 0.2s);
-          @include box-shadow();
-          position: relative; top: 1px;
-        }
+    .content {
+      float:left;
+      min-height:$show-height;
+      height:auto !important;
+      height:$show-height;
+      padding:4px 30px 0 25px;
+      color:#fff;
+      
+      h3 { 
+        text-transform: uppercase; color: #549a95; font-family: proxima-nova-extra-condensed-1, proxima-nova-extra-condensed-2; margin-top: 16px; font-size: 2.5em; font-weight: 300; margin-bottom: 5px; 
+        span { color: #fff; margin-left: 8px; }
       }
-    } 
-    #player {
-      h2 { background: #fff; }
-      .artwork img {
-        background:#fff;
-        border-radius: 8px;
-        @include box-shadow(0px 1px 5px rgba(0,0,0,.75));
-        display: block;
+      .meta {
+        font-weight:300;
+        color: #555;
+        font-size: 1.2em;
+        text-shadow: 0px 1px 0px #000;
+        i { opacity: 0.8; margin-top: 3px; }
+        .time { margin-left: 10px; }
       }
     }
   }
+}
+
+.overlay {
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:url(/assets/img-overlay.png);
+}
+
+.overlayDate {
+  position:absolute;
+  top:51%;
+  left:25px;
+  @include transition(all 0.3s linear);
+  width:110px;
+  height:95px;
+  padding-top:19px;
+  margin:-55px 0 0 0;
+  text-align:center;
+  text-transform:uppercase;
+  font-weight:800;
+  color:#666;
+  background:url(/assets/img-overlay-date.png) no-repeat 0 0;
+
+  .month { clear:both; display:block; font-size:25px; line-height:22px; }
+  .date { clear:both; display:block; font-size:45px; line-height:35px; }
+  .year { clear:both; display:block; font-size:20px; line-height:19px; }
 }

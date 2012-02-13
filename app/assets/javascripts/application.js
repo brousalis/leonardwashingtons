@@ -8,5 +8,24 @@
 
 $(window).load(function() {
   $("#slider").orbit({directionalNav: false, animationSpeed: 1200, advanceSpeed: 5000}); 
-  $("#social").hide().fadeIn(1000);
+});
+
+$(document).ready(function(){
+  new jPlayerPlaylist({
+    jPlayer: "#jquery_jplayer_1",
+    cssSelectorAncestor: "#jp_container_1"
+  }, [
+    { title:"Cricket", mp3:"http://themeforest.brutal-design.com/html/musicpro/assets/audio/live-preview/mp3/Deftones-Prince.mp3", oga:"http://themeforest.brutal-design.com/html/musicpro/assets/audio/live-preview/ogg/Deftones-Prince.ogg" },
+    { title:"Slide on Down", mp3:"http://themeforest.brutal-design.com/html/musicpro/assets/audio/live-preview/mp3/AliceInChains-CheckMyBrain.mp3", oga:"http://themeforest.brutal-design.com/html/musicpro/assets/audio/live-preview/ogg/AliceInChains-CheckMyBrain.ogg" },
+    { title:"Why Are You Such A Bitch", mp3:"http://themeforest.brutal-design.com/html/musicpro/assets/audio/live-preview/mp3/AliceInChains-CheckMyBrain.mp3", oga:"http://themeforest.brutal-design.com/html/musicpro/assets/audio/live-preview/ogg/AliceInChains-CheckMyBrain.ogg" },
+    { title:"Midnight Rain", mp3:"http://themeforest.brutal-design.com/html/musicpro/assets/audio/live-preview/mp3/AliceInChains-CheckMyBrain.mp3", oga:"http://themeforest.brutal-design.com/html/musicpro/assets/audio/live-preview/ogg/AliceInChains-CheckMyBrain.ogg" },
+    { title:"Elenor Rigby > Breath", mp3:"http://themeforest.brutal-design.com/html/musicpro/assets/audio/live-preview/mp3/AliceInChains-CheckMyBrain.mp3", oga:"http://themeforest.brutal-design.com/html/musicpro/assets/audio/live-preview/ogg/AliceInChains-CheckMyBrain.ogg" }
+  ], {
+    swfPath: "js",
+    supplied: "mp3",
+    wmode: "window",
+    playlistOptions: {
+       autoPlay : false
+    }
+  });
 });

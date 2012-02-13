@@ -4,22 +4,103 @@
       Recent
       %span News
     .content
-      %h3 Back in the studio
-      %p
-        %span Feb 16, 2012 -
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut.
+      %h3 
+        Back in the studio
+        %span Feb 16, 2012 
+      %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. I'm sciencing as fast as I&hellip;
     .content
-      %h3 New website
-      %p
-        %span Feb 8, 2012 -
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut.
+      %h3 
+        New website
+        %span Jan 15, 2012
+      %p Lorem ipsum dolor sit amet, consectetur adipisicing elit do mourn absheb it&hellip;
+
   %section#album.column
     .artwork
-      %a{:href => "#"}
-        %img{:src => "/assets/album.jpg"}/
-  %section#player.column
-    %h2
-    .player
-      %iframe{:frameborder => "no", :height => "290", :scrolling => "no", :src => "http://w.soundcloud.com/player/?url=http%3A%2F%2Fapi.soundcloud.com%2Fplaylists%2F541602&auto_play=false&show_artwork=true&color=549c95", :width => "100%"}
-.clearfix
+      %span  
+      %img{:src => "/assets/album_case.png"}/
+    .buy 
+      %span Click here 
+      to find out more
 
+  %section#player.column
+    #jplayer_container
+      #jquery_jplayer_1.jp-jplayer
+      #jp_container_1.jp-audio
+        .jp-type-playlist
+          .jp-gui.jp-interface
+            %ul.jp-controls
+              %li
+                %a.jp-previous{:href => "javascript:;", :tabindex => "1"} previous
+              %li
+                %a.jp-play{:href => "javascript:;", :tabindex => "1"} play
+              %li
+                %a.jp-pause{:href => "javascript:;", :tabindex => "1"} pause
+              %li
+                %a.jp-next{:href => "javascript:;", :tabindex => "1"} next
+              %li
+                %a.jp-stop{:href => "javascript:;", :tabindex => "1"} stop
+              %li
+                %a.jp-mute{:href => "javascript:;", :tabindex => "1", :title => "mute"} mute
+              %li
+                %a.jp-unmute{:href => "javascript:;", :tabindex => "1", :title => "unmute"} unmute
+              %li
+                %a.jp-volume-max{:href => "javascript:;", :tabindex => "1", :title => "max volume"} max volume
+            .jp-progress
+              .jp-seek-bar
+                .jp-play-bar
+            .jp-volume-bar
+              .jp-volume-bar-value
+            .jp-current-time
+            .jp-duration
+          .jp-playlist
+            %ul
+              %li
+          .jp-no-solution
+            %span Update Required
+            To play the media you will need to either update your browser to a recent version or update your
+            = succeed "." do
+              %a{:href => "http://get.adobe.com/flashplayer/", :target => "_blank"} Flash plugin
+
+%section.shows
+  %article
+    .image
+      %img{:src => "/assets/1.jpg"}/
+      .overlayDate
+        %span.month Oct
+        %span.date 25
+        %span.year 2012
+      %a{:href => "http://demo.udfrance.com/VOLTAGE/black/blog-layout-1.html", :title => "Graphic Design"} Graphic Design
+      .overlay
+    .content
+      %h3
+        Aragon Theatre
+        %span Chicago, IL
+      %span.meta
+        %span.address 
+          %i.icon-map-marker
+          4502 131st St, Naples
+        %span.time 
+          %i.icon-time
+          8:00 PM 
+  %article
+    .image
+      %img{:src => "/assets/2.jpg"}/
+      .overlayDate
+        %span.month NOV
+        %span.date 12
+        %span.year 2012
+      %a{:href => "http://demo.udfrance.com/VOLTAGE/black/blog-layout-1.html", :title => "Graphic Design"} Graphic Design
+      .overlay
+    .content
+      %h3
+        The Mid
+        %span NAPLES, OH
+      %span.meta
+        %span.address 
+          %i.icon-map-marker
+          4502 131st St, Naples
+        %span.time 
+          %i.icon-time
+          8:00 PM
+
+.clearfix

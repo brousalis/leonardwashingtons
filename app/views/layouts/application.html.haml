@@ -1,5 +1,5 @@
 !!! 5
-%html.no-js{:lang => "en"}
+%html
   %head
     %meta{:charset => "utf-8"}
     %meta{:content => "IE=edge,chrome=1", "http-equiv" => "X-UA-Compatible"}
@@ -8,6 +8,7 @@
     %meta{:content => "Pete Brousalis - brousalis.com", :name => "author"}
     %meta{:content => "width=device-width,initial-scale=1", :name => "viewport"}
     = stylesheet_link_tag "application"
+    = stylesheet_link_tag "orbit"
     %script{:src => "http://use.typekit.com/fhb0qqm.js", :type => "text/javascript"}
     :javascript
       try{Typekit.load();}catch(e){}
@@ -33,18 +34,7 @@
             = image_tag("3.jpg")
             = link_to image_tag("3.jpg"), "#"
             = image_tag("3.jpg")
-          #social
-            %nav
-              %li.facebook
-                %a{:href => "#"} soundcloud
-              %li.twitter
-                %a{:href => "#"} twitter
-              %li.soundcloud
-                %a{:href => "#"} soundcloud
-              %li.lastfm
-                %a{:href => "#"} lastfm
-              %li.email
-                %a{:href => "#"} email
+          .clearfix
         #content
           = yield
       #footer
