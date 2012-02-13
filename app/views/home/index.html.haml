@@ -1,5 +1,5 @@
-%section.columns
-  %section#news.column
+.columns
+  #news.column
     %h2
       Recent
       %span News
@@ -14,7 +14,7 @@
         %span Jan 15, 2012
       %p Lorem ipsum dolor sit amet, consectetur adipisicing elit do mourn absheb it&hellip;
 
-  %section#album.column
+  #album.column
     .artwork
       %span  
       %img{:src => "/assets/album_case.png"}/
@@ -22,7 +22,7 @@
       %span Click here 
       to find out more
 
-  %section#player.column
+  #player.column
     #jplayer_container
       #jquery_jplayer_1.jp-jplayer
       #jp_container_1.jp-audio
@@ -60,47 +60,62 @@
             To play the media you will need to either update your browser to a recent version or update your
             = succeed "." do
               %a{:href => "http://get.adobe.com/flashplayer/", :target => "_blank"} Flash plugin
+.clearfix
+#social-wrapper
+  #shows
+    .show
+      .image
+        %img{:src => "/assets/1.jpg"}/
+        .date
+          %span.month Oct
+          %span.day 25
+          %span.year 2012
+        %a{:href => "#"} 
+        .overlay
+      .content
+        %h3
+          Aragon Theatre
+          %span Chicago, IL
+        %span.meta
+          %span.address 
+            %i.icon-map-marker
+            4502 131st St, Naples
+          %span.time 
+            %i.icon-time
+            8:00 PM 
+    .show
+      .image
+        %img{:src => "/assets/2.jpg"}/
+        .date
+          %span.month NOV
+          %span.day 12
+          %span.year 2012
+        %a{:href => "#"} 
+        .overlay
+      .content
+        %h3
+          The Mid
+          %span NAPLES, OH
+        %span.meta
+          %span.address 
+            %i.icon-map-marker
+            4502 131st St, Naples
+          %span.time 
+            %i.icon-time
+            8:00 PM
+    .clearfix
+    %h2 
+      See all our upcoming shows
+  #social
+    .newsletter
+      %h2 NEWSLETTER
+      .content
+        %p 
+          Sign up for our newsletter and get a free download of our newest single
+          %span Miss Massey
+        %input#newsletter{:value => "email address"}
+    .share
+      Testing
 
-%section.shows
-  %article
-    .image
-      %img{:src => "/assets/1.jpg"}/
-      .overlayDate
-        %span.month Oct
-        %span.date 25
-        %span.year 2012
-      %a{:href => "http://demo.udfrance.com/VOLTAGE/black/blog-layout-1.html", :title => "Graphic Design"} Graphic Design
-      .overlay
-    .content
-      %h3
-        Aragon Theatre
-        %span Chicago, IL
-      %span.meta
-        %span.address 
-          %i.icon-map-marker
-          4502 131st St, Naples
-        %span.time 
-          %i.icon-time
-          8:00 PM 
-  %article
-    .image
-      %img{:src => "/assets/2.jpg"}/
-      .overlayDate
-        %span.month NOV
-        %span.date 12
-        %span.year 2012
-      %a{:href => "http://demo.udfrance.com/VOLTAGE/black/blog-layout-1.html", :title => "Graphic Design"} Graphic Design
-      .overlay
-    .content
-      %h3
-        The Mid
-        %span NAPLES, OH
-      %span.meta
-        %span.address 
-          %i.icon-map-marker
-          4502 131st St, Naples
-        %span.time 
-          %i.icon-time
-          8:00 PM
 
 .clearfix

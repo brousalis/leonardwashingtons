@@ -38,7 +38,7 @@ div.jp-audio .jp-interface .jp-volume-bar { top: 30px; right: 0; }
 div.jp-type-playlist div.jp-playlist li:first-child { border-top: none; padding-top: 3px; }
 div.jp-type-playlist div.jp-playlist li:last-child { border-bottom: none; padding-bottom: 3px; }
 div.jp-type-playlist div.jp-playlist a { color: #444!important; text-decoration: none; }
-div.jp-type-playlist div.jp-playlist a:hover { background: url('/assets/black.png'); }
+div.jp-type-playlist div.jp-playlist li:hover { background: #000; }
 div.jp-type-playlist div.jp-playlist li.jp-playlist-current { background: #000; }
 div.jp-type-playlist div.jp-playlist li.jp-playlist-current a { color: #549c95!important;}
 div.jp-jplayer audio, div.jp-jplayer { width: 0px; height: 0px; }
