@@ -12,6 +12,8 @@ body {
   background: url(/assets/body-background.gif) repeat;
 }
 
+a { color: #666; text-decoration: none;}
+
 .container {
   height: auto !important; 
   height: 100%;
@@ -96,11 +98,31 @@ header {
 
   #top {
     @include box-shadow(0 0 20px rgba(0, 0, 0, 0.4));
+    @include transition(all 0.3s linear);
     position: relative;
     height: 410px; 
     border-bottom: 5px solid #aca700; 
+    overflow: hidden;
     img { vertical-align: top;}
   }
+
+  #ajax {
+    display: none;
+    .close {
+      position:absolute;
+      display:block;
+      top:4%;
+      right:3%;
+      width:39px;
+      height:39px;
+      z-index:200;
+      cursor: pointer;
+      a{
+        opacity:.3;transition: opacity 0.4s;-webkit-transition: opacity 0.4s;-moz-transition: opacity 0.4s;display:block;width:39px;height:39px;background:url('/assets/btn-close-black.png') no-repeat;text-indent:-9999px;
+        &:hover{opacity:1;}
+      }
+    }
+  }   
 
   #social { position:absolute; width: 100%; z-index: 100; }
   #social nav {
@@ -120,17 +142,11 @@ header {
     }
   }
 
-  #social nav li.soundcloud a, #social nav li.soundcloud { background: url(/assets/social/soundcloud.png) no-repeat; }
-  #social nav li.lastfm a, #social nav li.lastfm { background: url(/assets/social/lastfm.png) no-repeat; }
-  #social nav li.facebook a, #social nav li.facebook { background: url(/assets/social/facebook.png) no-repeat; }
-  #social nav li.twitter a, #social nav li.twitter { background: url(/assets/social/twitter.png) no-repeat; }
-  #social nav li.email a, #social nav li.email { background: url(/assets/social/email.png) no-repeat; }   
-
   #content { 
     color: #ddd; 
     min-height: 400px;
     margin-top: -25px; 
-    padding: 25px 10px; font-size: 1.6em; 
+    padding: 25px 16px; font-size: 1.6em; 
   }
   #slider img { width: $width }
 }

@@ -34,6 +34,13 @@
             = link_to image_tag("3.jpg"), "#"
             = image_tag("3.jpg")
           .clearfix
+          #ajax
+            %span.close
+              %a{:href => "#"} X
+            #ajax_post
+              .picture
+              %h3.title
+              .content
         #content
           = yield
       #footer

@@ -223,6 +223,7 @@ $show-width: 597px;
       span { color: white; font-weight: 400;}
     }
 
+    #news .content:hover { opacity: 0.7; @include transition(opacity 0.3s linear); }
     .content {
       cursor: pointer;
       @include transition(opacity 0.3s linear); 
@@ -230,7 +231,6 @@ $show-width: 597px;
       margin-bottom: 14px; 
 
       &:last-child { border-radius: 0 0 $border $border; }
-      &:hover { opacity: 0.7; @include transition(opacity 0.3s linear); }
       p { margin: 0; padding: 7px 15px 15px 15px; font: 0.9em "proxima-nova-1","proxima-nova-2"; line-height: 20px; span { color: #fff; }}
       span { color: #aaa; font-weight: 300; }
 
@@ -257,12 +257,13 @@ $show-width: 597px;
       }
 
       #newsletter:hover {   
-        background-color: hsla(0,0%,0%,.2);
+        background: #000;
         @include transition(background-color .1s linear);
       }
 
       #newsletter:focus {
         border-left: #549c95 solid 4px;
+        background: #000;
         @include box-shadow(none);
         @include transition(background-color .2s ease-in);
       }

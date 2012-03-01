@@ -28,4 +28,39 @@ $(document).ready(function(){
        autoPlay : false
     }
   });
+
+  $('.post').click(function(e) {
+    e.preventDefault();
+    load_post($(this), 900);
+  });
+
 });
+
+function load_post(e, height) {
+  $('html, body').animate({
+    scrollTop: 150
+  }, 800);
+  $('.orbit-wrapper').fadeOut();
+  $('#top').animate({height:height+"px"}, 500).css({background:"url('/assets/black.png')"});
+  $('#ajax').delay(800).fadeIn(); 
+
+  // load content here
+  $.ajax({
+    url: e.attr('href'), type: 'get', dataType: 'json', 
+    success: function(e) { 
+      $('#ajax_post').find('.title').html(e.name + "<span>" + e.date + "</span");
+      $('#ajax_post').find('.picture ').attr("background", "url('assets/"+e.picture+"') no-repeat");
+      $('#ajax_post').find('.content').html(e.content);
+    }
+  });  
+
+  $('.close').click(function(e) {
+    $('html, body').animate({
+      scrollTop: 0
+    }, 800);
+    e.preventDefault();
+    $('#ajax').fadeOut();
+    $('#top').animate({height:"410px", background: "none"}, 300);
+    $('.orbit-wrapper').delay(800).fadeIn();
+  }); 
+}
