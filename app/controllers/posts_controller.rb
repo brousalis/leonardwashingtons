@@ -1,4 +1,3 @@
-require 'RedCarpet'
 class PostsController < ApplicationController
   def show
     @post = Post.find_by_id(params[:id])

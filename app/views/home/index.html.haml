@@ -3,12 +3,13 @@
     %h2
       Recent
       %span News
-    .content
-      %a.post{:href => "posts/4"}
-        %h3 
-          Message From Billy
-          %span Nov 11, 2011 
-        %p Dear friends, Lenny Washingtonians, countrymen, lend me your ears&hellip; 
+    - Post.all.each do |post|
+      .content
+        %a.post{:href => "posts/#{post.id}"}
+          %h3 
+            #{post.name}
+            %span #{format_date(post.date)}
+          %p #{truncate(post.content, 65)}
 
   #album.column
     .artwork
