@@ -5,8 +5,14 @@ class PostsController < ApplicationController
     
     respond_to do |format|
       format.json {
-        render :json => {"name" => @post.name, "date" => @post.date, "picture" => @post.picture, "content" => @markdown.to_html }
+        render :json => {"name" => @post.name, "date" => format_date(@post.date), "picture" => @post.picture, "content" => @markdown.to_html }
       }
     end
   end
+
+  private
+
+  def format_date(datetime)
+    return datetime.strftime("%d/%m/%Y %l:%m %p")
+  end 
 end
