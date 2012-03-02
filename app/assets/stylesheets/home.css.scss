@@ -109,6 +109,9 @@ $show-width: 597px;
       border-radius: 0 0 $border $border;
       padding:8px 0px;
       color: #444;
+      cursor: pointer;
+      @include transition(all 0.3s linear);
+      &:hover { color: #999; @include transition(all 0.3s linear); }
       span { color: white; font-weight: 400;}
     } 
 
@@ -227,10 +230,9 @@ $show-width: 597px;
     .content {
       @include transition(opacity 0.3s linear); 
       background-color: black; opacity: 0.5;  
-
       &:last-child { border-radius: 0 0 $border $border; }
-      p { margin: 0; padding: 9px 15px 9px 15px; font: 0.9em "proxima-nova-1","proxima-nova-2"; line-height: 20px; span { color: #fff; }}
-      span { color: #aaa; font-weight: 300; }
+      p { color: #666; margin: 0; padding: 9px 15px 9px 15px; font: 0.9em "proxima-nova-1","proxima-nova-2"; line-height: 20px; span { color: #fff; }}
+      span { color: #fff; font-weight: 300; }
     }
     #newsletter { 
       margin-bottom: 14px; 
@@ -251,12 +253,14 @@ $show-width: 597px;
       background-color: hsla(0,0%,0%,.5);
       @include border-radius(0px 0px $border 0px);
       @include transition(background-color .6s linear); 
-    }
-
-    #newsletter:focus {
-      border-left: #549c95 solid 4px;
-      background-color: hsla(0,0%,0%,.9) !important;
-      @include transition(background-color .6s linear);
+      &.success { border-left: green solid 4px !important; }
+      &.fail { border-left: red solid 4px !important; }
+      &.loading { background: #000 url('/assets/ajax-loader.gif') no-repeat 95%; }
+      &:focus {
+        border-left: #549c95 solid 4px;
+        background-color: hsla(0,0%,0%,.9) !important;
+        @include transition(background-color .6s linear);
+      }
     }
     .share {
       opacity: 0.2;
