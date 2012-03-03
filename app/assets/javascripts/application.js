@@ -43,15 +43,9 @@ $(document).ready(function(){
           url: 'newsletter/', type: 'post', dataType: 'json',
           success: function(e) { 
             $('#newsletter').removeClass('loading');
-            if (e.status == "success") {
-              $('#newsletter').addClass('success');
-              $('#newsletter').parent('#social').find('content p').html('Thank you for signing up! Miss Massey has been sent to your email address');
-              $('#newsletter').prop('disabled', true);
-            } else if (e.status == "fail") {
-              $('#newsletter').addClass('fail');
-              $('#newsletter').parent('#social').find('content p').html('There was a problem signing up. Please use a different e-mail address and try again').delay(800).html('Sign up for our newsletter and get a free download of our newest single <span>Miss Massey</span>');
-              $('#newsletter').delay(1200).val('email address');
-            }
+            $('.status').html(e.message);
+            if (e.status == "success") $('#newsletter').removeClass().addClass('success').prop('disabled', true); 
+            else if (e.status == "fail") $('#newsletter').removeClass().addClass('fail').delay(1200).val('email address'); 
           }
         });
       }, 800);

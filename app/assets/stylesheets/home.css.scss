@@ -233,6 +233,8 @@ $show-width: 597px;
       &:last-child { border-radius: 0 0 $border $border; }
       p { color: #666; margin: 0; padding: 9px 15px 9px 15px; font: 0.9em "proxima-nova-1","proxima-nova-2"; line-height: 20px; span { color: #fff; }}
       span { color: #fff; font-weight: 300; }
+      span.success { color: green; }
+      span.fail { color: red; }
     }
     #newsletter { 
       margin-bottom: 14px; 
