@@ -11,7 +11,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120301051131) do
+ActiveRecord::Schema.define(:version => 20120302164542) do
+
+  create_table "newsletter", :force => true do |t|
+    t.string   "email"
+    t.datetime "updated"
+    t.string   "md5"
+  end
+
+  create_table "newsletters", :force => true do |t|
+    t.string   "email"
+    t.datetime "updated"
+    t.string   "md5"
+  end
 
   create_table "posts", :force => true do |t|
     t.string   "name"

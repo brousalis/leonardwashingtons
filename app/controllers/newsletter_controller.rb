@@ -1,22 +1,19 @@
 class NewsletterController < ApplicationController
-  def create
-    @email = params[:email]
-    @mailchimp = Hominid::API.new('835b538b7ad3d901753f78eecacd7aad-us4')
 
-    @mailchimp.list_subscribe('7d3249f50f', @email)
-    sent = @mailchimp.campaign_send_test('06203f236a', [@email])
-    logger.info "sent #{sent}"
+  def create
+    @newsletter = Newsletter.new({:email => params[:email],
+                                  :updated => Time.now,
+                                  :md5 => Digest::MD5.hexdigest("#{@newsletter.email}#{@newsletter.updated}"),
+                                 })
+    @newsletter.save! if @newsletter.valid?
+
+    #MusicMailer.music_email(@newsletter)
 
     respond_to do |format|
-      if sent
-        format.json {
-          render :json => {"status" => "success"} 
-        }
-      elsif
-        format.json {
-          render :json => {"status" => "fail"} 
-        }
-      end
-    end 
+      format.json {
+        render :json => {"status" => "success"} 
+      }
+    end
   end
+
 end

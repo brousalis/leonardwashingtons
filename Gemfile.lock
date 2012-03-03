@@ -50,7 +50,6 @@ GEM
       multi_json (~> 1.0)
     haml (3.1.4)
     hike (1.2.1)
-    hominid (3.0.4)
     i18n (0.6.0)
     jquery-rails (1.0.19)
       railties (~> 3.0)
@@ -128,7 +127,6 @@ DEPENDENCIES
   coffee-rails (~> 3.1.1)
   devise
   haml (>= 3.0.0)
-  hominid
   jquery-rails
   pg
   rails (= 3.1.3)
