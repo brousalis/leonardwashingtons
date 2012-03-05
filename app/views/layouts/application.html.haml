@@ -20,27 +20,25 @@
           %li
             %a.home{:href => "#"} Home
           %li
-            %a{:href => "#"} About
+            %a.about{:href => "#"} About
           %li
-            %a{:href => "#"} Shows
+            %a.shows{:href => "#"} Shows
           %li
-            %a{:href => "#"} Music
+            %a.music{:href => "#"} Music
           %li
-            %a{:href => "#"} Contact
+            %a.contact{:href => "#"} Contact
       #main
         #top
           #slider
             = image_tag("1.png")
-            = link_to image_tag("2.png"), "#"
+            = image_tag("2.png")
             = image_tag("3.png")
           .clearfix
           #ajax
             %span.close
               %a{:href => "#"} X
-            #ajax_post
-              .picture
-              %h3.title
-              .content
+            = render 'layouts/posts'
+            = render 'layouts/about'
         #content
           = yield
       #footer

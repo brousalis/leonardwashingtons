@@ -29,11 +29,24 @@ $(document).ready(function(){
     }
   });
 
-  $('.post').click(function(e) {
+  // pages
+  close_content(); 
+  $('[id^="ajax_"]').hide();
+
+  $('.post').live('click', function(e) {
     e.preventDefault();
     load_post($(this), 900);
+    $('#ajax_post').fadeIn();
   });
 
+  $('.about').live('click', function(e) {
+    e.preventDefault();
+    open_content(400);
+    $('[id^="ajax_"]').hide();
+    $('#ajax_about').fadeIn();
+  });
+
+  // newsletter
   $('#newsletter').input_focus().keypress(function(e){
     if(e.which == 13) {
       $('#newsletter').addClass('loading');
@@ -51,6 +64,25 @@ $(document).ready(function(){
       }, 800);
     }
   });
+
+  // circle
+  $('.meet-circle').circlemouse({
+    onMouseEnter : function( el ) { el.addClass('meet-circle-hover'); },
+    onMouseLeave : function( el ) { el.removeClass('meet-circle-hover'); },
+    onClick : function( el ) { alert('clicked'); }
+  });
+
+  $('#ei_menu ul').iconmenu({
+    animMouseenter  : {
+      'mText' : {speed : 400, easing : 'easeOutExpo', delay : 140, dir : -1},
+      'sText' : {speed : 400, easing : 'easeOutExpo', delay : 280, dir : -1}
+    },
+    animMouseleave  : {
+      'mText' : {speed : 400, easing : 'easeInExpo', delay : 140, dir : -1},
+      'sText' : {speed : 400, easing : 'easeInExpo', delay : 0, dir : -1}
+    }
+  });      
+
 });
 
 $.fn.input_focus = function() {
@@ -64,13 +96,25 @@ $.fn.input_focus = function() {
   });
 }
 
-function load_post(e, height) {
+function open_content(height) {
   $('html, body').animate({ scrollTop: 150 }, 800);
   $('.orbit-wrapper').fadeOut();
   $('#top').animate({height:height+"px"}, 500).css({background:"url('/assets/black.png')"});
-  $('#ajax').delay(800).fadeIn(); 
+  $('#ajax').delay(800).fadeIn();  
+}
 
-  // load content 
+function close_content() {
+  $('.close').live('click', function(e) {
+    e.preventDefault();
+    $('html, body').animate({ scrollTop: 0 }, 800);
+    $('#ajax').fadeOut();
+    $('#top').animate({height:"410px", backgroundImage: "none"}, 300);
+    $('.orbit-wrapper').delay(800).fadeIn();
+  });  
+}
+
+function load_post(e, height) {
+  open_content(height);
   $.ajax({
     url: e.attr('href'), type: 'get', dataType: 'json', 
     success: function(e) { 
@@ -79,12 +123,6 @@ function load_post(e, height) {
       $('#ajax_post').find('.content').html(e.content);
     }
   });
-
-  $('.close').click(function(e) {
-    e.preventDefault();
-    $('html, body').animate({ scrollTop: 0 }, 800);
-    $('#ajax').fadeOut();
-    $('#top').animate({height:"410px", background: "none"}, 300);
-    $('.orbit-wrapper').delay(800).fadeIn();
-  }); 
 }
+
+(function(a,b){a.CircleEventManager=function(b,c){this.$el=a(c);this._init(b)};a.CircleEventManager.defaults={onMouseEnter:function(){return false},onMouseLeave:function(){return false},onClick:function(){return false}};a.CircleEventManager.prototype={_init:function(b){this.options=a.extend(true,{},a.CircleEventManager.defaults,b);this.$el.css("cursor","default");this._initEvents()},_initEvents:function(){var b=this;this.$el.on({"mouseenter.circlemouse":function(c){var d=a(this),e=d.outerWidth(true),f=d.outerHeight(true),g=d.offset().left,h=d.offset().top,i={x:g+e/2,y:h+f/2,radius:e/2};var j="default";if(b.$el.css("cursor")==="pointer"||b.$el.is("a"))j="pointer";d.data("cursor",j);d.on("mousemove.circlemouse",function(a){var c=Math.sqrt(Math.pow(a.pageX-i.x,2)+Math.pow(a.pageY-i.y,2));if(!Modernizr.borderradius){d.css("cursor",d.data("cursor")).data("inside",true);b.options.onMouseEnter(b.$el)}else{if(c<=i.radius&&!d.data("inside")){d.css("cursor",d.data("cursor")).data("inside",true);b.options.onMouseEnter(b.$el)}else if(c>i.radius&&d.data("inside")){d.css("cursor","default").data("inside",false);b.options.onMouseLeave(b.$el)}}})},"mouseleave.circlemouse":function(c){var d=a(this);d.off("mousemove");if(d.data("inside")){d.data("inside",false);b.options.onMouseLeave(b.$el)}},"click.circlemouse":function(c){var d=a(this);if(!d.data("inside"))return false;else b.options.onClick(b.$el)}})},destroy:function(){this.$el.unbind(".circlemouse").removeData("inside, cursor")}};var c=function(a){if(this.console){console.error(a)}};a.fn.circlemouse=function(b){if(typeof b==="string"){var d=Array.prototype.slice.call(arguments,1);this.each(function(){var e=a.data(this,"circlemouse");if(!e){c("cannot call methods on circlemouse prior to initialization; "+"attempted to call method '"+b+"'");return}if(!a.isFunction(e[b])||b.charAt(0)==="_"){c("no such method '"+b+"' for circlemouse instance");return}e[b].apply(e,d)})}else{this.each(function(){var c=a.data(this,"circlemouse");if(!c){a.data(this,"circlemouse",new a.CircleEventManager(b,this))}})}return this}})(jQuery)

@@ -28,3 +28,125 @@ a:a;if(0<=a&&a<this.playlist.length)this.removing=!0,b(this.cssSelector.playlist
 c.current=0,c.shuffled=!1,c._updateControls());c.removing=!1});return!0}},select:function(a){a=a<0?this.original.length+a:a;0<=a&&a<this.playlist.length?(this.current=a,this._highlight(a),b(this.cssSelector.jPlayer).jPlayer("setMedia",this.playlist[this.current])):this.current=0},play:function(a){a=a<0?this.original.length+a:a;0<=a&&a<this.playlist.length?this.playlist.length&&(this.select(a),b(this.cssSelector.jPlayer).jPlayer("play")):a===f&&b(this.cssSelector.jPlayer).jPlayer("play")},pause:function(){b(this.cssSelector.jPlayer).jPlayer("pause")},
 next:function(){var a=this.current+1<this.playlist.length?this.current+1:0;this.loop?a===0&&this.shuffled&&this.options.playlistOptions.shuffleOnLoop&&this.playlist.length>1?this.shuffle(!0,!0):this.play(a):a>0&&this.play(a)},previous:function(){var a=this.current-1>=0?this.current-1:this.playlist.length-1;(this.loop&&this.options.playlistOptions.loopOnPrevious||a<this.playlist.length-1)&&this.play(a)},shuffle:function(a,c){var d=this;a===f&&(a=!this.shuffled);(a||a!==this.shuffled)&&b(this.cssSelector.playlist+
 " ul").slideUp(this.options.playlistOptions.shuffleTime,function(){(d.shuffled=a)?d.playlist.sort(function(){return 0.5-Math.random()}):d._originalPlaylist();d._refresh(!0);c||!b(d.cssSelector.jPlayer).data("jPlayer").status.paused?d.play(0):d.select(0);b(this).slideDown(d.options.playlistOptions.shuffleTime)})}}})(jQuery);
+
+
+$.CircleEventManager            = function( options, element ) {
+ 
+    this.$el            = $( element );
+ 
+    this._init( options );
+ 
+};
+ 
+$.CircleEventManager.defaults   = {
+    onMouseEnter    : function() { return false },
+    onMouseLeave    : function() { return false },
+    onClick         : function() { return false }
+};
+ 
+$.CircleEventManager.prototype  = {
+    _init               : function( options ) {
+ 
+        this.options        = $.extend( true, {}, $.CircleEventManager.defaults, options );
+ 
+        // set the default cursor on the element
+        this.$el.css( 'cursor', 'default' );
+ 
+        this._initEvents();
+ 
+    },
+    _initEvents         : function() {
+ 
+        var _self   = this;
+ 
+        this.$el.on({
+            'mouseenter.circlemouse'    : function( event ) {
+ 
+                var el  = $(event.target),
+ 
+                          circleWidth   = el.outerWidth( true ),
+                          circleHeight  = el.outerHeight( true ),
+                          circleLeft    = el.offset().left,
+                          circleTop     = el.offset().top,
+                          circlePos     = {
+                              x     : circleLeft + circleWidth / 2,
+                              y     : circleTop + circleHeight / 2,
+                              radius: circleWidth / 2
+                          };
+ 
+                // save cursor type
+                var cursor  = 'default';
+ 
+                if( _self.$el.css('cursor') === 'pointer' || _self.$el.is('a') )
+                    cursor = 'pointer';
+ 
+                el.data( 'cursor', cursor );
+ 
+                el.on( 'mousemove.circlemouse', function( event ) {
+ 
+                    var distance    = Math.sqrt( Math.pow( event.pageX - circlePos.x, 2 ) + Math.pow( event.pageY - circlePos.y, 2 ) );
+ 
+                    if( !Modernizr.borderradius ) {
+ 
+                        // inside element / circle
+                        el.css( 'cursor', el.data('cursor') ).data( 'inside', true );
+                        _self.options.onMouseEnter( _self.$el );
+ 
+                    }
+                    else {
+ 
+                        if( distance <= circlePos.radius && !el.data('inside') ) {
+ 
+                            // inside element / circle
+                            el.css( 'cursor', el.data('cursor') ).data( 'inside', true );
+                            _self.options.onMouseEnter( _self.$el );
+ 
+                        }
+                        else if( distance > circlePos.radius && el.data('inside') ) {
+ 
+                            // inside element / outside circle
+                            el.css( 'cursor', 'default' ).data( 'inside', false );
+                            _self.options.onMouseLeave( _self.$el );
+ 
+                        }
+ 
+                    }
+ 
+                }); 
+ 
+            },
+            'mouseleave.circlemouse'    : function( event ) {
+ 
+                var el  = $(event.target);
+ 
+                el.off('mousemove');
+ 
+                if( el.data( 'inside' ) ) {
+ 
+                    el.data( 'inside', false );
+                    _self.options.onMouseLeave( _self.$el );
+ 
+                }
+ 
+            },
+            'click.circlemouse'         : function( event ) {
+ 
+                // allow the click only when inside the circle
+ 
+                var el  = $(event.target);
+ 
+                if( !el.data( 'inside' ) )
+                    return false;
+                else
+                    _self.options.onClick( _self.$el );
+ 
+            }
+        });
+ 
+    },
+    destroy             : function() {
+ 
+        this.$el.unbind('.circlemouse').removeData('inside').removeData('cursor');
+ 
+    }
+};

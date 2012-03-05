@@ -5,15 +5,13 @@ class NewsletterController < ApplicationController
                                   :updated => Time.now,
                                   :md5 => Digest::MD5.hexdigest("#{params[:email]}#{Time.now}")
                                  )
-    saved = @newsletter.save! if @newsletter.valid?
-
-    success = MusicMailer.music_email(@newsletter) if saved
+    success = @newsletter.save! if @newsletter.valid?
 
     respond_to do |format|
       if success 
         format.json {
           render :json => {"status" => "success",
-                           "message" => "<span class='success'>Success!</span> Thank you for signing up. A link to download <span>Miss Massey</span> has been sent to your inbox."}
+                           "message" => "<span class='success'>Success!</span> Thank you for signing up! <div><a href='/Miss_Massey.mp3'>Click here to download Miss Massey</a></div>"}
         }
       else
         format.json {
