@@ -69,17 +69,29 @@ $(document).ready(function(){
   $('.meet-circle').circlemouse({
     onMouseEnter : function( el ) { el.addClass('meet-circle-hover'); },
     onMouseLeave : function( el ) { el.removeClass('meet-circle-hover'); },
-    onClick : function( el ) { alert('clicked'); }
+    onClick : function( el ) { 
+      $('#about_container').fadeOut(); 
+      $('#meet_container').delay(800).fadeIn();
+      $('.close').fadeOut();
+      $('.back').delay(800).fadeIn();
+    }
+  });
+
+  $('.back').live('click', function() {
+    $('#about_container').delay(800).fadeIn(); 
+    $('#meet_container').fadeOut();
+    $('.close').delay(800).fadeIn();
+    $('.back').fadeOut(); 
   });
 
   $('#ei_menu ul').iconmenu({
     animMouseenter  : {
       'mText' : {speed : 400, easing : 'easeOutExpo', delay : 140, dir : -1},
-      'sText' : {speed : 400, easing : 'easeOutExpo', delay : 280, dir : -1}
+      'sText' : {speed : 400, easing : 'easeOutExpo', delay : 280, dir : 1}
     },
     animMouseleave  : {
       'mText' : {speed : 400, easing : 'easeInExpo', delay : 140, dir : -1},
-      'sText' : {speed : 400, easing : 'easeInExpo', delay : 0, dir : -1}
+      'sText' : {speed : 400, easing : 'easeInExpo', delay : 0, dir : 1}
     }
   });      
 
@@ -110,6 +122,7 @@ function close_content() {
     $('#ajax').fadeOut();
     $('#top').animate({height:"410px", backgroundImage: "none"}, 300);
     $('.orbit-wrapper').delay(800).fadeIn();
+    $('[id^="ajax_"]').hide();
   });  
 }
 

@@ -2,9 +2,9 @@ class NewsletterController < ApplicationController
 
   def create
     @newsletter = Newsletter.new(:email => params[:email],
-                                  :updated => Time.now,
-                                  :md5 => Digest::MD5.hexdigest("#{params[:email]}#{Time.now}")
-                                 )
+                                 :updated => Time.now,
+                                 :md5 => Digest::MD5.hexdigest("#{params[:email]}#{Time.now}"))
+
     success = @newsletter.save! if @newsletter.valid?
 
     respond_to do |format|

@@ -1,4 +1,5 @@
 !!! 5
+
 %html
   %head
     %meta{:charset => "utf-8"}
@@ -35,6 +36,8 @@
             = image_tag("3.png")
           .clearfix
           #ajax
+            %span.back
+              %a{:href => "#"} go back
             %span.close
               %a{:href => "#"} X
             = render 'layouts/posts'
