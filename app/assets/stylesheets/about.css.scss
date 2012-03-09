@@ -40,19 +40,20 @@ $teal: #549A95;
     }
 
     .contact, .albums {
-      padding: 7px 19px; 
+      padding: 12px 19px; 
       position: absolute;
       text-transform: uppercase;
-      background: #000;
+      background-color: #131313;
       font-size: 30px;
       font-weight: normal;
       color: #ddd;
       font-family: 'proxima-nova-extra-condensed-1', 'proxima-nova-extra-condensed-2';
       text-shadow: 0px 0px 1px #fff;
       margin: 35px 20px 20px 20px;
-      @include transition(all 0.3s linear); 
+      @include border-radius($border);
+      @include transition(background-color 0.6s linear); 
       @include clearfix();
-      &:hover { color: #fff; }
+      &:hover { color: #fff; background-color: #000; }
       &:active { position: relative; top: 1px; }
     }
     .albums { right: 0; }
@@ -85,10 +86,12 @@ $teal: #549A95;
       }
       .meet-circle h3{
         color: transparent;
-        font-size: 24px;
-        margin-top: 45px;
+        font-size: 30px;
+        font-family: 'proxima-nova-extra-condensed-1', 'proxima-nova-extra-condensed-2';
+        margin-top: 50px;
         text-shadow: 0px 0px 50px #fff;
         text-transform: uppercase;
+        @include border-radius($border);
         @include transition(all 400ms ease-in-out);
       }
       .meet-circle-hover h3{
