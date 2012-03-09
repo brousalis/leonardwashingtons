@@ -154,6 +154,7 @@ header {
         background:url('/assets/btn-close-black.png') no-repeat;
         text-indent:-9999px;
         &:hover{ @include opacity(100); }
+        &:active { position: relative; top: 1px; }
       }
     }
   }   

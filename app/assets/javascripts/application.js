@@ -70,7 +70,6 @@ $(document).ready(function(){
     onMouseEnter : function( el ) { el.addClass('meet-circle-hover'); },
     onMouseLeave : function( el ) { el.removeClass('meet-circle-hover'); },
     onClick : function( el ) { 
-      el.preventDefault();
       $('#about_container').fadeOut(); 
       $('#meet_container').delay(800).fadeIn();
       $('.close').fadeOut();
@@ -78,7 +77,8 @@ $(document).ready(function(){
     }
   });
 
-  $('.back').live('click', function() {
+  $('.back').live('click', function(e) {
+    e.preventDefault();
     $('#about_container').delay(800).fadeIn(); 
     $('#meet_container').fadeOut();
     $('.close').delay(800).fadeIn();

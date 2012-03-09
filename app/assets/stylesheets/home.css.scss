@@ -141,7 +141,7 @@ $show-width: 597px;
       &:hover { background: #000; @include transition(all 0.3s linear); }
       &:hover .date { color: #fdf700; @include transition(all 0.3s linear);}
 
-      .image{
+      .image {
         float:left;
         position:relative;
         width:170px;
