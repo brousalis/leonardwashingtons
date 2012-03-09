@@ -23,7 +23,7 @@ a { color: #666; text-decoration: none;}
 }
 
 header {
-  @include box-shadow(0 0 20px rgba(0, 0, 0, 0.4));
+  //@include box-shadow(0 0 20px rgba(0, 0, 0, 0.4));
   background: url(/assets/will_g.png), url(/assets/bg-dark.png);
   background-repeat: no-repeat, repeat;
   padding-top: 71px;
@@ -138,7 +138,7 @@ header {
     .close {
       position:absolute;
       display:block;
-      top:4%;
+      top:6%;
       right:3%;
       width:39px;
       height:39px;

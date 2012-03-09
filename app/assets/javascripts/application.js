@@ -65,11 +65,12 @@ $(document).ready(function(){
     }
   });
 
-  // circle
+  // about page
   $('.meet-circle').circlemouse({
     onMouseEnter : function( el ) { el.addClass('meet-circle-hover'); },
     onMouseLeave : function( el ) { el.removeClass('meet-circle-hover'); },
     onClick : function( el ) { 
+      el.preventDefault();
       $('#about_container').fadeOut(); 
       $('#meet_container').delay(800).fadeIn();
       $('.close').fadeOut();

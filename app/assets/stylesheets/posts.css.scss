@@ -1,10 +1,12 @@
 #ajax_post {
   overflow: hidden;
+
   .title {
     color: #fff;
     font-size: 2.5em;
     span { font-weight: normal; font-size: 19px; margin-left: 20px; text-transform: uppercase; @include opacity(50); color: #aaa; font-size: 0.8em }
   }
+
   .picture {
     float: left;
     margin-left: -300px;
@@ -17,6 +19,7 @@
     @include border-radius(0px 0px 20px 0px);
     &:hover { @include opacity(100); }
   }
+
   .content {
     padding: 0 25px 20px 20px;
     font-size: 1.8em;
