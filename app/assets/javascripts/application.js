@@ -36,7 +36,12 @@ $(document).ready(function(){
   $('.post').live('click', function(e) {
     e.preventDefault();
     load_post($(this), 900);
+    $('[id^="ajax_"]').hide();
     $('#ajax_post').fadeIn();
+    setTimeout(function() {
+      height = $('.title').height() + $('.content').height() + 90;
+      $('#top').animate({height:height+"px"}, 500); 
+    }, 800);
   });
 
   $('.about').live('click', function(e) {
@@ -133,7 +138,7 @@ function load_post(e, height) {
     url: e.attr('href'), type: 'get', dataType: 'json', 
     success: function(e) { 
       $('#ajax_post').find('.title').html(e.name + "<span>" + e.date + "</span");
-      $('#ajax_post').find('.picture ').attr("background", "url('assets/"+e.picture+"') no-repeat");
+      $('#ajax_post').find('.picture ').css({"background":"url('assets/"+e.picture+"') no-repeat !important"});
       $('#ajax_post').find('.content').html(e.content);
     }
   });

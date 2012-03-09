@@ -14,7 +14,6 @@
     width: 550px;
     height: 600px;
     @include opacity(80);
-    background: url('/assets/billy.png') no-repeat;
     @include transition(.3s all linear);
     @include border-radius(0px 0px 20px 0px);
     &:hover { @include opacity(100); }

@@ -133,12 +133,13 @@ header {
         color: #fff;
         @include transition(opacity 0.4s linear);
         display:block;
+        &:active { position: relative; top: 1px; }
       }
     }
     .close {
       position:absolute;
       display:block;
-      top:6%;
+      top:25px;
       right:3%;
       width:39px;
       height:39px;
