@@ -83,7 +83,7 @@
       padding: 5px 10px;
       @include opacity(0);
       font-family:  proxima-nova-extra-condensed-1, proxima-nova-extra-condensed-2;
-      span { color: #549c95; }
+      span { color: #ada700; }
     }
       
   }  
@@ -131,7 +131,7 @@ $show-width: 597px;
       height:$show-height;
       background:#111;
       cursor: pointer; 
-      margin-bottom: 2px;
+      margin-bottom: 1px;
       @include transition(all 0.3s linear);
 
       &:first-child { @include border-radius($border $border 0px 0px); }
@@ -247,6 +247,7 @@ $show-width: 597px;
     }
     #newsletter { 
       margin-bottom: 14px; 
+      margin-top: 1px;
       -webkit-appearance:none;
       width: 100%;
       display: block;
@@ -254,14 +255,13 @@ $show-width: 597px;
       resize: none;
       font: inherit;
       color: #fff;
-      padding: 8px 18px;
+      padding: 8px 18px !important;
       line-height: 30px;
       outline: none;
       -webkit-box-sizing: border-box; -moz-box-sizing: border-box; -ms-box-sizing: border-box; -o-box-sizing: border-box; box-sizing: border-box; 
       border: none;
-      border-bottom: hsla(0,0%,100%,0) solid 1px;
       border-left: #ada700 solid 4px;
-      background-color: hsla(0,0%,0%,.5);
+      background-color: rgba(0,0,0,.5);
       @include border-radius(0px 0px $border 0px);
       @include transition(background-color .6s linear); 
       &.success { border-left: green solid 4px !important; }
@@ -269,16 +269,36 @@ $show-width: 597px;
       &.loading { background: #000 url('/assets/ajax-loader.gif') no-repeat 95%; }
       &:focus {
         border-left: #549c95 solid 4px;
-        background-color: hsla(0,0%,0%,.9) !important;
+        background-color: rgba(0,0,0,.9) !important;
         @include transition(background-color .6s linear);
       }
     }
     .share {
-      @include opacity(20);
-      margin-top: 5px;
-      background: url('/assets/social.png');
+      margin-top: 15px;
       height: 106px;
-      text-indent: 9999px;
+      ul {
+        list-style: none;
+        margin: 0; padding: 0;
+        padding: 10px;
+        li {
+          float: left;
+          width: 120px;
+          height: 35px; 
+          margin-bottom: 10px;
+          text-indent: -9999px;
+          &.bottom{ height: 53px !important; }
+          a {
+            display: block; 
+            @include opacity(20);
+            @include transition(all 0.3s linear);
+            &:hover { @include opacity(100); }
+            &.facebook{width:111px;height:32px;background: url('/assets/facebook.png') no-repeat;}
+            &.twitter{width:142px;height:32px;background: url('/assets/twitter.png') 11px 0px no-repeat;}
+            &.bandcamp{width:148px;height:53px;background: url('/assets/bandcamp.png') 0px 15px no-repeat;}
+            &.soundcloud{width:102px; height:53px;background: url('/assets/soundcloud.png') no-repeat 0px -5px;}
+          }
+        }
+      }
     }
   }
 }
