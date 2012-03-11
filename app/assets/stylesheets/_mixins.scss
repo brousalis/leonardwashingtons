@@ -1,4 +1,7 @@
- @mixin clearfix() {
+$width: 960px;
+$border: 10px;
+
+@mixin clearfix() {
   *zoom: 1;
   &:before,
   &:after {

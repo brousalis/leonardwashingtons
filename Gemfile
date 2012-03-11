@@ -4,7 +4,6 @@ gem 'rails', '3.1.3'
 
 gem 'pg'
 gem 'redcarpet'
-gem "devise"
 gem "therubyracer"
 gem "jquery-rails"
 gem "haml", ">= 3.0.0"
