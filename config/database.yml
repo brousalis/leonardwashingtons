@@ -47,9 +47,9 @@ test:
   password:
 
 production:
-  adapter: postgresql
+  adapter: mysql
   encoding: unicode
-  database: leonards_production
+  database: theleona_db
   pool: 5
-  username: leonards
-  password:
+  username: theleona_admin
+  password: 911234

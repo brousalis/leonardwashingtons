@@ -1,0 +1,54 @@
+!!! 5
+
+%html
+  %head
+    %meta{:charset => "utf-8"}
+    %meta{:content => "IE=edge,chrome=1", "http-equiv" => "X-UA-Compatible"}
+    %title TLW - Admin
+    %meta{:content => "The Leonard Washingtons, a funky jam-band from Terre Haute, IN ", :name => "description"}
+    %meta{:content => "Pete Brousalis - brousalis.com", :name => "author"}
+    %meta{:content => "width=device-width,initial-scale=1", :name => "viewport"}
+    = stylesheet_link_tag "admin"
+    %script{:src => "http://use.typekit.com/fhb0qqm.js", :type => "text/javascript"}
+    :javascript
+      try{Typekit.load();}catch(e){}
+  %body
+    .container-fluid
+      .row
+        .span3
+          .well{:style => "padding: 8px 0;"}
+            %ul.nav.nav-list
+              %li.nav-header List header
+              %li.active
+                %a{:href => "#"}
+                  %i.icon-white.icon-home
+                  Home
+              %li
+                %a{:href => "#"}
+                  %i.icon-book
+                  Library
+              %li
+                %a{:href => "#"}
+                  %i.icon-pencil
+                  Applications
+              %li.nav-header Another list header
+              %li
+                %a{:href => "#"}
+                  %i.icon-user
+                  Profile
+              %li
+                %a{:href => "#"}
+                  %i.icon-cog
+                  Settings
+              %li.divider
+              %li
+                %a{:href => "#"}
+                  %i.icon-flag
+                  Help
+        .span9
+          .hero-unit
+            %h1 Heading
+            %p Tagline
+            %p
+              %a.btn.btn-primary.btn-large
+                Learn more
