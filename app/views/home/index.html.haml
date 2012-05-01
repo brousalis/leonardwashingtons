@@ -16,8 +16,10 @@
       %span  
       %img{:src => "/assets/album_case.png"}/
     .buy 
-      %span Click here 
-      to find out more
+      %span 
+        %a{:href => "http://itunes.apple.com/us/album/introducing../id427752485"} 
+          %strong Click here 
+          to find out more
 
   #player.column
     #jplayer_container
@@ -60,29 +62,10 @@
 .clearfix
 #social-wrapper
   #shows
+
     .show
       .image
         %img{:src => "/assets/1.jpg"}/
-        .date
-          %span.month Mar
-          %span.day 25
-          %span.year 2012
-        %a.page{:href => "#"} 
-        .overlay
-      .content
-        %h3
-          Elbo Room
-          %span Chicago, IL
-        %span.meta
-          %span.address 
-            %i.icon-map-marker
-            4502 131st St, Naples
-          %span.time 
-            %i.icon-time
-            8:00 PM 
-    .show
-      .image
-        %img{:src => "/assets/2.jpg"}/
         .date
           %span.month Mar
           %span.day 31
@@ -101,6 +84,26 @@
             %i.icon-time
             10:00 PM
     .clearfix
+    .show
+      .image
+        %img{:src => "/assets/1.jpg"}/
+        .date
+          %span.month May
+          %span.day 5
+          %span.year 2012
+        %a.page{:href => "#"} 
+        .overlay
+      .content
+        %h3
+          The Verve
+          %span Terre Haute, IN
+        %span.meta
+          %span.address 
+            %i.icon-map-marker
+            4502 131st St, Naples
+          %span.time 
+            %i.icon-time
+            10:00 PM 
     %h2.shows 
       See all our upcoming shows
 
