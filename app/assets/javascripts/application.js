@@ -97,12 +97,12 @@ $(document).ready(function(){
 
   $('#ei_menu ul').iconmenu({
     animMouseenter  : {
-      'mText' : {speed : 400, easing : 'easeOutExpo', delay : 140, dir : -1},
+      'mText' : {speed : 400, easing : 'easeOutExpo', delay : 140, dir : 1},
       'sText' : {speed : 400, easing : 'easeOutExpo', delay : 280, dir : 1}
     },
     animMouseleave  : {
       'mText' : {speed : 400, easing : 'easeInExpo', delay : 140, dir : -1},
-      'sText' : {speed : 400, easing : 'easeInExpo', delay : 0, dir : 1}
+      'sText' : {speed : 400, easing : 'easeInExpo', delay : 0, dir : -1}
     }
   });      
 

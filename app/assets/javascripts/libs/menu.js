@@ -79,7 +79,7 @@
                     dir       = settings.animMouseenter[item_sti_type].dir,
                     // if dir is 1 the item moves downwards
                     // if -1 then upwards
-                    style     = {'top' : -dir * wrapper_h + 'px'};
+                    style     = {'top' : dir * wrapper_h + 'px'};
                   
                   if( item_sti_type === 'icon' ) {
                     // this sets another bg image for the icon
@@ -95,7 +95,7 @@
                       // now animate each item to its default tops
                       // each item will animate with a delay specified in the options
                       $item.stop(true)
-                         .animate({top : $item.data('deftop') + 'px'}, speed, easing);
+                         .animate({top : $item.data('deftop') + 300 + 'px'}, speed, easing);
                     }, delay)
                   );
                 });
