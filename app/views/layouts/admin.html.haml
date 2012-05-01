@@ -16,39 +16,46 @@
     .container-fluid
       .row
         .span3
+          .top
+            %a{:href => "#"} TLW Admin
           .well{:style => "padding: 8px 0;"}
             %ul.nav.nav-list
-              %li.nav-header List header
-              %li.active
-                %a{:href => "#"}
-                  %i.icon-white.icon-home
-                  Home
+              %li.nav-header Homepage
               %li
                 %a{:href => "#"}
-                  %i.icon-book
-                  Library
+                  %i.icon-home
+                  Slideshow images
+              %li.nav-header Blog
               %li
                 %a{:href => "#"}
                   %i.icon-pencil
-                  Applications
-              %li.nav-header Another list header
+                  New post
               %li
                 %a{:href => "#"}
-                  %i.icon-user
-                  Profile
+                  %i.icon-edit
+                  Edit/delete posts
+              %li.nav-header About
               %li
                 %a{:href => "#"}
-                  %i.icon-cog
-                  Settings
-              %li.divider
+                  %i.icon-edit
+                  Edit about us
               %li
                 %a{:href => "#"}
-                  %i.icon-flag
-                  Help
-        .span9
-          .hero-unit
-            %h1 Heading
-            %p Tagline
-            %p
-              %a.btn.btn-primary.btn-large
-                Learn more
+                  %i.icon-edit
+                  Edit our sound
+              %li.nav-header Music
+              %li
+                %a{:href => "#"}
+                  %i.icon-music
+                  Albums
+              %li.nav-header Shows
+              %li
+                %a{:href => "#"}
+                  %i.icon-calendar
+                  Add show
+              %li
+                %a{:href => "#"}
+                  %i.icon-edit
+                  Edit/delete shows
+        .span10
+          = yield
