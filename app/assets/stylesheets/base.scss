@@ -1,6 +1,6 @@
 html { overflow-x:hidden; height: 100%; min-height: 100%; }
 body {
-  font: 62.5% proxima-nova-1, proxima-nova-2, "Helvetica Neue", Helvetica, Geneva, Arial, Verdana, sans-serif;
+  font: 62.5% proxima-nova , "Helvetica Neue", Helvetica, Geneva, Arial, Verdana, sans-serif;
   color: #313131;
   background: #fff;
   text-rendering: optimizelegibility;
@@ -70,7 +70,7 @@ header {
         border-bottom: 2px solid transparent;
         line-height: 30px;
         font-weight:  500;
-        font-family:  proxima-nova-extra-condensed-1, proxima-nova-extra-condensed-2;
+        font-family:  proxima-nova-extra-condensed ;
         text-transform: uppercase;
         @include opacity(80);
         @include transition(all 0.3s linear);
@@ -119,7 +119,7 @@ header {
       z-index:200;
       cursor: pointer; 
       display: none;
-      font-family:  proxima-nova-extra-condensed-1, proxima-nova-extra-condensed-2;
+      font-family:  proxima-nova-extra-condensed ;
       font-size: 1.9em;
       text-transform: uppercase;
       padding: 3px 8px;
@@ -195,7 +195,7 @@ header {
   position: relative;
   border-top: 2px solid #aca700; 
   p { 
-    font: 1.6em "proxima-nova-1", "proxima-nova-2"; 
+    font: 1.6em "proxima-nova", ""; 
     padding-top: 25px; 
     margin: 20px 0 0 0; 
     text-align: center; width: 100%; color: #666; 

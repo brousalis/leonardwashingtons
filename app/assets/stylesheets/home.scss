@@ -14,7 +14,7 @@
     color:#666;
 
     h2 {    
-      font-family:  proxima-nova-extra-condensed-1;
+      font-family:  proxima-nova-extra-condensed;
       text-transform:  uppercase;
       font-weight: 500;
       font-size: 34px; 
@@ -82,7 +82,7 @@
       text-transform: uppercase;
       padding: 5px 10px;
       @include opacity(0);
-      font-family:  proxima-nova-extra-condensed-1, proxima-nova-extra-condensed-2;
+      font-family:  proxima-nova-extra-condensed ;
       span { color: #ada700; }
     }
       
@@ -106,7 +106,7 @@ $show-width: 597px;
 
     h2 {    
       width: $show-width;
-      font-family:  proxima-nova-extra-condensed-1;
+      font-family:  proxima-nova-extra-condensed;
       text-transform:  uppercase;
       font-weight: 500;
       font-size: 24px; 
@@ -172,7 +172,7 @@ $show-width: 597px;
         color:#fff;
         
         h3 { 
-          text-transform: uppercase; color: #549a95; font-family: proxima-nova-extra-condensed-1, proxima-nova-extra-condensed-2; margin-top: 16px; font-size: 2.5em; font-weight: 300; margin-bottom: 5px; 
+          text-transform: uppercase; color: #549a95; font-family: proxima-nova-extra-condensed ; margin-top: 16px; font-size: 2.5em; font-weight: 300; margin-bottom: 5px; 
           span { color: #fff; margin-left: 8px; }
         }
         .meta {
@@ -220,7 +220,7 @@ $show-width: 597px;
     width: 287px;
 
     h2 {    
-      font-family:  proxima-nova-extra-condensed-1, proxima-nova-extra-condensed-2;
+      font-family:  proxima-nova-extra-condensed ;
       text-transform:  uppercase;
       font-weight: 500;
       margin-top: 8px;
@@ -240,7 +240,7 @@ $show-width: 597px;
       background-color: black; 
       @include opacity(50);
       &:last-child { border-radius: 0 0 $border $border; }
-      p { color: #666; margin: 0; padding: 9px 15px 9px 15px; font: 0.9em "proxima-nova-1","proxima-nova-2"; line-height: 20px; span { color: #fff; }}
+      p { color: #666; margin: 0; padding: 9px 15px 9px 15px; font: 0.9em "proxima-nova",""; line-height: 20px; span { color: #fff; }}
       span { color: #fff; font-weight: 300; }
       span.success { color: green; }
       span.fail { color: red; }
