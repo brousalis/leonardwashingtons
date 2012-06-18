@@ -25,10 +25,6 @@ ActiveRecord::Schema.define(:version => 20120402144730) do
   create_table "contents", :force => true do |t|
     t.string   "name"
     t.text     "content"
-    t.string   "pic_content_type"
-    t.datetime "pic_updated_at"
-    t.string   "pic_file_name"
-    t.integer  "pic_file_size"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -50,10 +46,6 @@ ActiveRecord::Schema.define(:version => 20120402144730) do
     t.string   "venue"
     t.datetime "date"
     t.string   "address"
-    t.string   "pic_content_type"
-    t.datetime "pic_updated_at"
-    t.string   "pic_file_name"
-    t.integer  "pic_file_size"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

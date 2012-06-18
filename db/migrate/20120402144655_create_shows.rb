@@ -4,7 +4,6 @@ class CreateShows < ActiveRecord::Migration
       t.string :venue
       t.datetime :date
       t.string :address
-      t.has_attached_file :pic
       t.timestamps
     end
   end

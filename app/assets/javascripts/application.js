@@ -1,9 +1,3 @@
-// This is a manifest file that'll be compiled into including all the files listed below.
-// Add new JavaScript/Coffee code in separate files in this directory and they'll automatically
-// be included in the compiled file accessible from http://example.com/assets/application.js
-// It's not advisable to add code directly here, but if you do, it'll appear at the bottom of the
-// the compiled file.
-//
 //= require_tree .
 
 $(window).load(function() {
@@ -15,10 +9,10 @@ $(document).ready(function(){
     jPlayer: "#jquery_jplayer_1",
     cssSelectorAncestor: "#jp_container_1"
   }, [
-    { title:"Cricket", mp3:"", oga:"" },
-    { title:"Slide on Down", mp3:"", oga:"" },
-    { title:"Why Are You Such A Bitch", mp3:"", oga:"" },
-    { title:"Midnight Rain", mp3:"", oga:"" },
+    { title:"Cricket", mp3:"http://theleonardwashingtons.com/Cricket.mp3", oga:"" },
+    { title:"And I Dreamt Of You", mp3:"http://theleonardwashingtons.com/And.mp3", oga:"" },
+    { title:"Mamacita", mp3:"http://theleonardwashingtons.com/Mamacita.mp3", oga:"" },
+    { title:"Why Are You Such A Bitch", mp3:"http://theleonardwashingtons.com/Why.mp3", oga:"" },
     { title:"Elenor Rigby > Breath", mp3:"", oga:"" }
   ], {
     swfPath: "js",
@@ -140,8 +134,8 @@ function load_post(e, height) {
     url: e.attr('href'), type: 'get', dataType: 'json', 
     success: function(e) { 
       $('#ajax_post').find('.title').html(e.name + "<span>" + e.date + "</span");
-      $('#ajax_post').find('.picture ').css({"background":"url('assets/"+e.picture+"') no-repeat !important"});
       $('#ajax_post').find('.content').html(e.content);
+      $('#ajax_post').find('.picture').show().css("background","url('/assets/" + e.picture + "') no-repeat !important");
     }
   });
 }

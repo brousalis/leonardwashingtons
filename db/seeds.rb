@@ -7,8 +7,8 @@ our_sound = Content.create(:name => "our_sound",
 
 # message from billy
 p = Post.new
-p.name = "A Message From Billy"
-p.picture = "billy.png"
+p.name = "Relix Magazine"
+p.picture = "um.png"
 p.date = Time.parse("11/11/2011, 8:11 am")
 p.content = <<-eos
 This month we're featured in Relix Magazine's monthly compilation cd with a small write-up in their On The Rise section.
@@ -19,8 +19,8 @@ p.save!
 
 # relix post
 p = Post.new
-p.name = "Relix Magazine"
-p.picture = "um.png"
+p.name = "A Message From Billy"
+p.picture = "billy.png"
 p.date = Time.parse("3/03/2012, 1:04 pm")
 p.content = <<-eos
 Dear friends, Lenny Washingtonians, countrymen, lend me your ears...

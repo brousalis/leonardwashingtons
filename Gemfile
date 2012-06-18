@@ -2,11 +2,9 @@ source 'http://rubygems.org'
 
 gem 'rails', '3.1.3'
 
-gem 'redcarpet'
+gem 'rdiscount'
 gem "therubyracer"
 gem "jquery-rails"
-gem "haml", ">= 3.0.0"
-gem "paperclip", "~> 3.0"
 gem 'net-ssh'
 
 group :development do
@@ -18,6 +16,7 @@ group :production do
 end
 
 group :assets do
+  gem "haml", ">= 3.0.0"
   gem 'sass-rails',   '~> 3.1'
   gem 'bootstrap-sass', '~> 2.0.2'
   gem 'coffee-rails', '~> 3.1.1'
