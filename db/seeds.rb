@@ -44,3 +44,19 @@ All the best,
 Billy Big Lips
             eos
 p.save! 
+
+p = Post.new
+p.name = "TLW Kickstarter"
+p.picture = "kickstarter.png"
+p.date = Time.parse("5/19/2012, 3:45 pm")
+p.content = <<-eos
+With three years passed and countless barriers to completion, we are finally ready to release our sophomore effort: a full length, professionally mastered and mixed LP.  With a newly finalized lineup, including the newly acquired and immensely talented Natalie Lande and Tim Doyle, and 5 years of existence as a band, we're as ready as we'll ever be to release this new energy upon your collective ears in full band Stereophonic sound.
+
+However, to manufacture a finished product worthy of your discerning tastes and aesthetic sensibilities, we are in dire need of your monetary support.  The bulk of the recording is finished and we are now left to the tasks of mixing, mastering, album art, promotion, and producing the physical CD.  We need your help to make all this happen.
+
+Any size donation helps!  Each contribution above $10 counts as a pre-order for the new album.  Other various rewards range from the elusive Complete The Leonard Washingtons Solo Discography to our Booze + Pig + Music Party offer.  Remember, if we don't reach our goal, we receive none of your donations (of course, your donations are refunded).
+
+As always, we are infinitely grateful for all the help all our fans have given us along the way in the past five years.  Without your support, none of this would be happening.  Thank you so much for helping us pursue our passion! 
+  eos
+p.save!
+

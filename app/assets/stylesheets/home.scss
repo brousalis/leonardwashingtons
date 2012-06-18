@@ -38,7 +38,8 @@
         padding: 13px 15px 4px 15px; 
         font-weight: 500; 
         color: #fff; 
-        span { float: right; font-size: 0.8em; text-transform: uppercase; @include opacity(50); margin-top: 4px;} 
+        font-size: 19px;
+        span { float: right; font-size: 13px; text-transform: uppercase; @include opacity(50); margin-top: 4px;} 
       }
       p { margin: 0; padding: 7px 15px 15px 15px; font-size: 0.9em; line-height: 20px; }
       span { color: #aaa; font-weight: 300; }
