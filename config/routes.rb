@@ -3,5 +3,10 @@ Leonards::Application.routes.draw do
 
   resources :posts
   resources :newsletter
-  resources :admin
+
+  resources :admin do
+    collection do
+      get :slideshow
+    end
+  end
 end

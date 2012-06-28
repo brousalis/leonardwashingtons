@@ -1,0 +1,219 @@
+$yellow: #fdf700
+$teal: #549A95
+
+$width: 960px
+$height: 410px
+$border: 10px
+$circle: 290px
+
+$show-height: 120px
+$show-width: 597px
+
+@import mixins
+@import partials/home
+@import partials/posts
+@import partials/about
+
+@import lib/jplayer
+@import lib/orbit
+
+html 
+  overflow-x: hidden
+  height: 100%
+  min-height: 100%
+
+body
+  font: 62.5% proxima-nova, "Helvetica Neue", Helvetica, Geneva, Arial, Verdana, sans-serif
+  color: #313131
+  background: #fff
+  text-rendering: optimizelegibility
+  position: relative
+  height: 100%
+  min-height: 100%
+  width: 100%
+  margin: 8px
+  background: image-url('body-background.gif') repeat
+
+a
+  color: #666
+  text-decoration: none
+
+  &:hover
+    text-decoration: none
+
+#wrapper
+  height: auto !important
+  height: 100%
+  min-height: 100%
+  width: $width
+  position: relative
+  margin: 0 auto
+
+header
+  background: image-url('will_g.png'), image-url('bg-dark.png')
+  background-repeat: no-repeat, repeat
+  padding-top: 71px
+  position: relative
+  z-index: 10
+  +clearfix()
+
+  .logo
+    width: 266px
+    height: 113px
+    float: left
+    overflow: hidden
+    text-indent: -9999px
+    margin: 0 0 20px 33px
+    background: image-url('tlw_l.png') no-repeat
+
+    a
+      display: block
+      height: 100%
+
+      &:hover
+        +opacity(.7)
+
+  nav
+    margin: 0
+    padding: 83px 33px 0 60px
+    list-style: none
+    float: right
+
+    li
+      float: left
+      display: block
+      text-shadow: #21272e 0 1px 1px
+      padding: 0 0 0 25px
+
+      a
+        text-shadow: 0px 2px 1px #000
+        float: left
+        display: block
+        color: #FFF
+        text-decoration: none
+        font-size: 34px
+        border-bottom: 2px solid transparent
+        line-height: 30px
+        font-weight: 500
+        font-family: proxima-nova-extra-condensed
+        text-transform: uppercase
+        +opacity(.8)
+        +transition(all 0.3s linear)
+
+        &.home
+          position: relative
+          display: block
+          text-indent: -9999px
+          background: image-url('home.png') no-repeat
+          height: 26px
+          width: 27px
+          padding-right: 5px
+
+        &:hover
+          color: #fdf700
+
+#main
+  position: relative
+  z-index: 1
+
+  #top
+    +box-shadow(0 0 20px rgba(0, 0, 0, 0.4))
+    +transition(all 0.3s linear)
+    position: relative
+    height: 410px
+    border-bottom: 5px solid #aca700
+    overflow: hidden
+
+    img
+      vertical-align: top
+
+    #ajax
+      display: none
+
+      .back
+        position: absolute
+        display: block
+        top: 91%
+        right: 1%
+        z-index: 200
+        cursor: pointer
+        display: none
+        font-family: proxima-nova-extra-condensed
+        font-size: 1.9em
+        text-transform: uppercase
+        padding: 3px 8px
+        background: #000
+        +opacity(.5)
+        +border-radius(4px)
+        +transition(opacity 0.4s linear)
+
+        &:hover
+          +opacity(1)
+
+        a
+          color: #fff
+          +transition(opacity 0.4s linear)
+          display:block
+
+          &:active
+            position: relative
+            top: 1px
+
+      .close
+        position: absolute
+        display: block
+        top: 25px
+        right: 3%
+        width: 39px
+        height: 39px
+        z-index: 200
+        cursor: pointer
+
+        a
+          +opacity(.3)
+          +transition(opacity 0.4s linear)
+          display: block
+          width: 39px
+          height: 39px
+          background: image-url('btn-close-black.png') no-repeat
+          text-indent: -9999px
+
+          &:hover
+            +opacity(1)
+
+          &:active
+            position: relative
+            top: 1px
+
+  #content
+    color: #ddd
+    min-height: 400px
+    margin-top: -25px
+    padding: 25px 16px
+    font-size: 1.6em 
+
+  #slider img
+    width: $width
+
+#footer
+  +box-shadow("0 0 20px rgba(0, 0, 0, 0.4)")
+  background: image-url('bg-dark.png')
+  height: 100px
+  text-align: center
+  position: relative
+  border-top: 2px solid #aca700
+
+  p
+    font: 1.6em proxima-nova
+    padding-top: 25px
+    margin: 20px 0 0 0
+    text-align: center
+    width: 100%
+    color: #666
+    +opacity(.8)
+
+    span
+      color: white
+
+
+

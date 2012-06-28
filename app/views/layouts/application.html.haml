@@ -1,56 +1,37 @@
 !!! 5
 %html
   %head
-    %meta{:charset => "utf-8"}
-    %meta{:content => "IE=edge,chrome=1", "http-equiv" => "X-UA-Compatible"}
     %title The Leonard Washingtons
     %meta{:content => "The Leonard Washingtons, a funky jam-band from Terre Haute, IN ", :name => "description"}
     %meta{:content => "Pete Brousalis - brousalis.com", :name => "author"}
     %meta{:content => "width=device-width,initial-scale=1", :name => "viewport"}
+    %meta{:charset => "utf-8"}
+    %meta{:content => "IE=edge,chrome=1", "http-equiv" => "X-UA-Compatible"}
     = stylesheet_link_tag "application"
     %script{:src => "http://use.typekit.com/iui1xgf.js", :type => "text/javascript"}
     :javascript
       try{Typekit.load();}catch(e){}
   %body
-    .container
-      %header
-        %h1.logo
-          %a{:href => "#"} TLW
-        %nav
-          %li
-            %a.home{:href => "#"} Home
-          %li
-            %a.about{:href => "#"} About
-          %li
-            %a.shows{:href => "#"} Shows
-          %li
-            %a.music{:href => "http://itunes.apple.com/us/album/introducing../id427752485"} Music
-          %li
-            %a.contact{:href => "mailto:theleonardwashingtons@gmail.com"} Contact
-      #main
-        #top
-          #slider
-            = image_tag("1.png")
-            = image_tag("2.png")
-            = image_tag("3.png")
-          .clearfix
-          #ajax
-            %span.back
-              %a{:href => "#"} go back
-            %span.close
-              %a{:href => "#"} X
-            = render 'layouts/posts'
-            = render 'layouts/about'
-        #content
-          = yield
-      #footer
-        %p
-          All Rights Reserved. Copyright 2012
-          %span The Leonard Washingtons
-
+    = yield
     = javascript_include_tag "application"
     :javascript
       window._gaq = [['_setAccount','UA-21647859-2'],['_trackPageview'],['_trackPageLoadTime']];
         Modernizr.load({
         load: ('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js'
       });
+      $(document).ready(function(){
+        new jPlayerPlaylist({
+          jPlayer: "#jquery_jplayer_1",
+          cssSelectorAncestor: "#jp_container_1"
+        }, 
+          #{Song.to_list.to_json}, 
+        {
+          swfPath: "js",
+          supplied: "mp3",
+          wmode: "window",
+          playlistOptions: {
+            autoPlay : false
+          }
+        });
+      });
+

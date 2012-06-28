@@ -10,23 +10,13 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120402144730) do
-
-  create_table "albums", :force => true do |t|
-    t.string   "itunes"
-    t.string   "amazon"
-    t.string   "soundcloud"
-    t.string   "name"
-    t.string   "released"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
+ActiveRecord::Schema.define(:version => 20120624124200) do
 
   create_table "contents", :force => true do |t|
     t.string   "name"
     t.text     "content"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "newsletters", :force => true do |t|
@@ -39,23 +29,24 @@ ActiveRecord::Schema.define(:version => 20120402144730) do
     t.string   "name"
     t.text     "content"
     t.string   "picture"
-    t.datetime "date"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "shows", :force => true do |t|
     t.string   "venue"
     t.datetime "date"
     t.string   "address"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "songs", :force => true do |t|
-    t.integer  "album_id"
-    t.string   "name"
-    t.string   "length"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string   "title"
+    t.string   "mp3"
+    t.string   "ogg"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
 end

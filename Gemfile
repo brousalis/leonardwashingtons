@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.1.3'
+gem 'rails'
 
 gem 'rdiscount'
 gem "therubyracer"
@@ -17,9 +17,8 @@ end
 
 group :assets do
   gem "haml", ">= 3.0.0"
-  gem 'sass-rails',   '~> 3.1'
+  gem 'sass-rails', '~> 3.1'
   gem 'bootstrap-sass', '~> 2.0.2'
-  gem 'coffee-rails', '~> 3.1.1'
   gem 'uglifier', '>= 1.0.3'
 end
 

@@ -1,124 +1,152 @@
-.columns
-  #news.column
-    %h2
-      Recent
-      %span News
-    - Post.find(:all, :limit => 2, :order => 'date DESC').each do |post|
-      .content
-        %a.post{:href => "posts/#{post.id}"}
-          %h3 
-            #{post.name}
-            %span #{format_date(post.date)}
-          %p #{truncate(post.content, 65)}
-
-  #album.column
-    %a{:href => "http://www.kickstarter.com/projects/887391720/the-leonard-washingtons-debut-lp"}
-      .artwork
-        %span  
-        %img{:src => "/assets/kickstarter_ad.jpg"}/
-
-  #player.column
-    #jplayer_container
-      #jquery_jplayer_1.jp-jplayer
-      #jp_container_1.jp-audio
-        .jp-type-playlist
-          .jp-gui.jp-interface
-            %ul.jp-controls
-              %li
-                %a.jp-previous{:href => "javascript:;", :tabindex => "1"} previous
-              %li
-                %a.jp-play{:href => "javascript:;", :tabindex => "1"} play
-              %li
-                %a.jp-pause{:href => "javascript:;", :tabindex => "1"} pause
-              %li
-                %a.jp-next{:href => "javascript:;", :tabindex => "1"} next
-              %li
-                %a.jp-stop{:href => "javascript:;", :tabindex => "1"} stop
-              %li
-                %a.jp-mute{:href => "javascript:;", :tabindex => "1", :title => "mute"} mute
-              %li
-                %a.jp-unmute{:href => "javascript:;", :tabindex => "1", :title => "unmute"} unmute
-              %li
-                %a.jp-volume-max{:href => "javascript:;", :tabindex => "1", :title => "max volume"} max volume
-            .jp-progress
-              .jp-seek-bar
-                .jp-play-bar
-            .jp-volume-bar
-              .jp-volume-bar-value
-            .jp-current-time
-            .jp-duration
-          .jp-playlist
+#wrapper
+  %header
+    %h1.logo
+      %a{:href => "#"} TLW
+    %nav
+      %li
+        %a.home{:href => "#"} Home
+      %li
+        %a.about{:href => "#"} About
+      %li
+        %a.shows{:href => "#"} Shows
+      %li
+        %a.music{:href => "http://itunes.apple.com/us/album/introducing../id427752485"} Music
+      %li
+        %a.contact{:href => "mailto:theleonardwashingtons@gmail.com"} Contact
+  #main
+    #top
+      #slider
+        = image_tag("1.png")
+        = image_tag("2.png")
+        = image_tag("3.png")
+      .clearfix
+      #ajax
+        %span.back
+          %a{:href => "#"} go back
+        %span.close
+          %a{:href => "#"} X
+        = render :partial => '/home/partials/posts'
+        = render :partial => '/home/partials/about'
+    #content
+      .columns
+        #news.column        
+          %h2
+            Recent
+            %span News
+          - Post.find(:all, :limit => 2, :order => 'created_at DESC').each do |post|
+            .content
+              %a.post{:href => "posts/#{post.id}"}
+                %h3 
+                  #{post.name}
+                  %span #{format_date(post.created_at)}
+                %p #{truncate(post.content, 65)}
+        #album.column
+          %a{:href => "http://www.kickstarter.com/projects/887391720/the-leonard-washingtons-debut-lp"}
+            .artwork
+              %span
+              %img{:src => "/assets/kickstarter_ad.jpg"}/
+        #player.column
+          #jplayer_container
+            #jquery_jplayer_1.jp-jplayer
+            #jp_container_1.jp-audio
+              .jp-type-playlist
+                .jp-gui.jp-interface
+                  %ul.jp-controls
+                    %li
+                      %a.jp-previous{:href => "javascript:;", :tabindex => "1"} previous
+                    %li
+                      %a.jp-play{:href => "javascript:;", :tabindex => "1"} play
+                    %li
+                      %a.jp-pause{:href => "javascript:;", :tabindex => "1"} pause
+                    %li
+                      %a.jp-next{:href => "javascript:;", :tabindex => "1"} next
+                    %li
+                      %a.jp-stop{:href => "javascript:;", :tabindex => "1"} stop
+                    %li
+                      %a.jp-mute{:href => "javascript:;", :tabindex => "1", :title => "mute"} mute
+                    %li
+                      %a.jp-unmute{:href => "javascript:;", :tabindex => "1", :title => "unmute"} unmute
+                    %li
+                      %a.jp-volume-max{:href => "javascript:;", :tabindex => "1", :title => "max volume"} max volume
+                  .jp-progress
+                    .jp-seek-bar
+                      .jp-play-bar
+                  .jp-volume-bar
+                    .jp-volume-bar-value
+                  .jp-current-time
+                  .jp-duration
+                .jp-playlist
+                  %ul
+                    %li
+                .jp-no-solution
+                  %span Update Required
+                  To play the media you will need to either update your browser to a recent version or update your
+                  = succeed "." do
+                    %a{:href => "http://get.adobe.com/flashplayer/", :target => "_blank"} Flash plugin
+      .clearfix
+      #social-wrapper
+        #shows
+          .show
+            .image
+              %img{:src => "/assets/1.jpg"}/
+              .date
+                %span.month June
+                %span.day 8
+                %span.year 2012
+              %a{:href => "#"} 
+              .overlay
+            .content
+              %h3
+                The Verve
+                %span Terre Haute, IN
+              %span.meta
+                %span.address 
+                  %i.icon-map-marker
+                  677 Wabash Ave
+                %span.time 
+                  %i.icon-time
+                  10:00 PM
+          .clearfix
+          .show
+            .image
+              %img{:src => "/assets/1.jpg"}/
+              .date
+                %span.month June
+                %span.day 16
+                %span.year 2012
+              %a.page{:href => "#"} 
+              .overlay
+            .content
+              %h3
+                Jacobapalooza
+                %span Terre Haute, IN
+              %span.meta
+                %span.address 
+                  %i.icon-map-marker
+                  8355 E Margaret Drive
+                %span.time 
+                  %i.icon-time
+                  10:00 PM 
+          %h2.shows See all our upcoming shows
+        #social
+          %h2 Newsletter
+          .content
+            %p.status 
+              Sign up for our newsletter and get a free download of our newest single
+              %span Miss Massey
+          %input#newsletter{:value => "email address"}
+          .share
             %ul
               %li
-          .jp-no-solution
-            %span Update Required
-            To play the media you will need to either update your browser to a recent version or update your
-            = succeed "." do
-              %a{:href => "http://get.adobe.com/flashplayer/", :target => "_blank"} Flash plugin
-.clearfix
-#social-wrapper
-  #shows
-
-    .show
-      .image
-        %img{:src => "/assets/1.jpg"}/
-        .date
-          %span.month June
-          %span.day 8
-          %span.year 2012
-        %a{:href => "#"} 
-        .overlay
-      .content
-        %h3
-          The Verve
-          %span Terre Haute, IN
-        %span.meta
-          %span.address 
-            %i.icon-map-marker
-            677 Wabash Ave
-          %span.time 
-            %i.icon-time
-            10:00 PM
-    .clearfix
-    .show
-      .image
-        %img{:src => "/assets/1.jpg"}/
-        .date
-          %span.month June
-          %span.day 16
-          %span.year 2012
-        %a.page{:href => "#"} 
-        .overlay
-      .content
-        %h3
-          Jacobapalooza
-          %span Terre Haute, IN
-        %span.meta
-          %span.address 
-            %i.icon-map-marker
-            8355 E Margaret Drive
-          %span.time 
-            %i.icon-time
-            10:00 PM 
-    %h2.shows 
-      See all our upcoming shows
-
-  #social
-    %h2 Newsletter
-    .content
-      %p.status 
-        Sign up for our newsletter and get a free download of our newest single
-        %span Miss Massey
-    %input#newsletter{:value => "email address"}
-    .share
-      %ul
-        %li
-          %a.facebook{:href => "http://facebook.com/theleonardwashingtons"} Facebook
-        %li
-          %a.twitter{:href => "http://twitter.com/theleonards"} Twitter
-        %li.bottom
-          %a.soundcloud{:href => "http://soundcloud.com/tlws"} Soundcloud
-        %li.bottom
-          %a.bandcamp{:href => "http://theleonardwashingtons.bandcamp.com/"} Bandcamp
-
-.clearfix
+                %a.facebook{:href => "http://facebook.com/theleonardwashingtons"} Facebook
+              %li
+                %a.twitter{:href => "http://twitter.com/theleonards"} Twitter
+              %li.bottom
+                %a.soundcloud{:href => "http://soundcloud.com/tlws"} Soundcloud
+              %li.bottom
+                %a.bandcamp{:href => "http://theleonardwashingtons.bandcamp.com/"} Bandcamp
+      .clearfix
+  #footer
+    %p
+      All Rights Reserved. Copyright 2012
+      %span The Leonard Washingtons

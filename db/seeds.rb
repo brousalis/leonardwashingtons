@@ -1,3 +1,10 @@
+# songs
+Song.create(:title => "Cricket", :mp3 => "http://theleonardwashingtons.com/Cricket.mp3", :oga => "")
+Song.create(:title => "And I Dreamt Of You", :mp3 => "http://theleonardwashingtons.com/And.mp3", :oga => "")
+Song.create(:title => "Mamacita", :mp3 => "http://theleonardwashingtons.com/Mamacita.mp3", :oga => "" )
+Song.create(:title => "Why Are You Such A Bitch", :mp3 => "http://theleonardwashingtons.com/Why.mp3", :oga => "")
+Song.create(:title => "Elenor Rigby > Breath", :mp3 => "", :oga => "")
+
 # content keys
 about_us = Content.create(:name => "about_us",
                           :content => "With the core of the group forming in 2005, The Leonard Washingtons have spent the better part of six years refining a sound that they still can't quite put a finger on. Each member is an independent musician in their own right, a trait that is apparent in the constant and indiscriminate meshing of styles and influences in live shows and original compositions. While their goal is common, the way they play together is anything but.")
@@ -9,7 +16,7 @@ our_sound = Content.create(:name => "our_sound",
 p = Post.new
 p.name = "Relix Magazine"
 p.picture = "um.png"
-p.date = Time.parse("11/11/2011, 8:11 am")
+p.created_at = Time.parse("11/11/2011, 8:11 am")
 p.content = <<-eos
 This month we're featured in Relix Magazine's monthly compilation cd with a small write-up in their On The Rise section.
 
@@ -21,7 +28,7 @@ p.save!
 p = Post.new
 p.name = "A Message From Billy"
 p.picture = "billy.png"
-p.date = Time.parse("3/03/2012, 1:04 pm")
+p.created_at = Time.parse("3/03/2012, 1:04 pm")
 p.content = <<-eos
 Dear friends, Lenny Washingtonians, countrymen, lend me your ears...
 
@@ -48,7 +55,7 @@ p.save!
 p = Post.new
 p.name = "TLW Kickstarter"
 p.picture = "kickstarter.png"
-p.date = Time.parse("5/19/2012, 3:45 pm")
+p.created_at = Time.parse("5/19/2012, 3:45 pm")
 p.content = <<-eos
 With three years passed and countless barriers to completion, we are finally ready to release our sophomore effort: a full length, professionally mastered and mixed LP.  With a newly finalized lineup, including the newly acquired and immensely talented Natalie Lande and Tim Doyle, and 5 years of existence as a band, we're as ready as we'll ever be to release this new energy upon your collective ears in full band Stereophonic sound.
 

@@ -18,19 +18,19 @@
 #caseStudies>a { display: none; }
 
 
-
-
 /* CONTAINER
    ================================================== */
 
 div.orbit-wrapper {
-    width: 1px;
-    height: 1px;
+    width: $width;
+    height: $height;
     position: relative; }
 
 div.orbit {
     width: 1px;
     height: 1px;
+    width: $width;
+    height: $height;
     position: relative;
     overflow: hidden }
     
@@ -47,6 +47,8 @@ div.orbit>img {
 div.orbit>a {
     border: none;
     position: absolute;
+    width: $width;
+    height: $height;
     top: 0;
     left: 0;
     line-height: 0; 
@@ -54,6 +56,8 @@ div.orbit>a {
 
 .orbit>div {
     position: absolute;
+    width: $width;
+    height: $height;
     top: 0;
     left: 0;
     width: 100%;

@@ -1,0 +1,14 @@
+= form_for @post, :class => "form-horizontal" do |f|
+  %fieldset
+    .control-group
+      .controls
+        = f.text_field :name, :class => "input-xlarge", :placeholder => "name of post", :value => @post.name
+    .control-group
+      .controls
+        = f.text_area :content, :class => "input-xlarge", :placeholder => "body", :value => @post.content
+    .form-actions
+      %div{:style => "float: left"}
+        = f.submit "Save", :class => "btn btn-large btn-primary", :id => "submit"
+        = f.submit "Cancel", :class => "btn btn-large", :id => "submit"
+      %div{:style => "float: right"}
+        = button_to "Delete", post_path(@post), :class => "btn btn-large", :id => "submit", :method => "delete"

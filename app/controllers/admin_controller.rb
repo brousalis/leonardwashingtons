@@ -7,5 +7,10 @@ class AdminController < ApplicationController
       format.html
     end
   end
+
+  def slideshow
+    render "slideshow"
+  end
+
 end
 

@@ -1,0 +1,17 @@
+%table.table.table-striped.table-bordered.table-condensed
+  %thead
+    %tr
+      %th #
+      %th Name
+      %th Posted on
+      %th Delete
+  %tbody
+    %tr
+    - @posts.each do |post|
+      %tr
+        %td= post.id
+        %td= link_to post.name, edit_post_path(Post.find(post.id))
+        %td= format_date(post.created_at)
+        %td 
+          %a{:href => "/posts/#{post.id}/delete"} delete
+

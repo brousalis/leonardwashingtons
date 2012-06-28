@@ -2,11 +2,11 @@
   #about_container
     #us
       %h1 About Us
-      %p With the core of the group forming in 2005, The Leonard Washingtons have spent the better part of six years refining a sound that they still can't quite put a finger on. Each member is an independent musician in their own right, a trait that is apparent in the constant and indiscriminate meshing of styles and influences in live shows and original compositions. While their goal is common, the way they play together is anything but.
+      %p= Content.find_by_name("about_us").content
       %a.contact{:href => "#"} Contact Us
     #sound
       %h1 Our Sound
-      %p A raw mix of hip-hop based funk, jazz harmonies, and a tendency to reference a highly eclectic mix of influences. Mark Stalcup put it quite eloquently: "Think the solo songs of Steely Dan's Donald Fagen meets The Roots, sung by a funkier John Mayer channeling Winwood. A moment later, it's a hoarser Jack Johnson fronting the Meters, covering a mash-up of Dave Brubeck, Isaac Hayes and Phish."
+      %p= Content.find_by_name("our_sound").content
       %a.albums{:href => "#"} Our Albums
     #meet_us
       %a.meet-circle{:href => "javascript:null(0)"} 

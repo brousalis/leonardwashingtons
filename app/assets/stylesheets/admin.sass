@@ -1,0 +1,56 @@
+@import bootstrap
+
+$form-margin: 20px
+
+body
+  font-family: proxima-nova
+
+.container
+  margin-top: 80px
+
+.well
+  +border-radius(0px 0px 9px 9px !important)
+
+.hero-unit
+  padding: 15px !important
+
+.form-horizontal
+  padding-top: $form-margin
+  &, .control-label
+    width: auto !important
+    font-size: 18px
+  .controls
+    margin-left: 0
+  #submit
+    font-weight: bold
+
+.input-xlarge 
+  margin: 0px $form-margin
+  width: 700px - ($form-margin * 2) !important
+  font-size: 18px !important
+  padding: 9px
+  +box-shadow(none)
+  border: 1px solid #fff
+  &:focus
+    border: 1px solid #f2f2f2
+    +box-shadow(none)
+
+.placeholder
+  color: #aaa
+
+#post_content
+  min-height: 700px !important
+  line-height: 22px
+
+.top
+  background: #000
+  padding: 5px 15px
+  +border-radius(5px 5px 0px 0px !important)
+
+  a
+    color: #fff
+    text-transform: uppercase
+    font-weight: bold
+    font-size: 14px
+
+

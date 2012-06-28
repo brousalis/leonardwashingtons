@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
 
-  private
+private
   def authenticate
     authenticate_or_request_with_http_basic do |login, password|
       if login == "admin" and password == "r3cycle"

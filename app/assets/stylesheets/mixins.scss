@@ -28,14 +28,29 @@ $border: 10px;
 }
 
 @mixin opacity($opacity: 100) {
-  opacity: $opacity / 100;
+  opacity: $opacity;
    filter: alpha(opacity=$opacity);
 }
 
-@mixin box-shadow($shadow: 0 1px 3px rgba(0,0,0,.35), $shadow2: 0px 1px 14px rgba(0,0,0,.2)) {
-  -webkit-box-shadow: $shadow, $shadow2;
-     -moz-box-shadow: $shadow, $shadow2;
-          box-shadow: $shadow, $shadow2;
+//@mixin box-shadow($shadow: 0 1px 3px rgba(0,0,0,.35), $shadow2: 0px 1px 14px rgba(0,0,0,.2)) {
+//  -webkit-box-shadow: $shadow, $shadow2;
+//     -moz-box-shadow: $shadow, $shadow2;
+//          box-shadow: $shadow, $shadow2;
+//}
+
+@mixin box-shadow($shadow1, $shadow2:false, $shadow3:false, $shadow4:false, $shadow5:false) {
+ $params: $shadow1;
+  @if $shadow2 
+    { $params: $shadow1, $shadow2; }
+    @if $shadow3 != false
+      { $params: $shadow1, $shadow2, $shadow3; }
+      @if $shadow4 != false
+        { $params: $shadow1, $shadow2, $shadow3, $shadow4; }
+        @if $shadow5 != false
+          { $params: $shadow1, $shadow2, $shadow3, $shadow4, $shadow5; }
+  -webkit-box-shadow: $params;
+  -moz-box-shadow: $params;
+
 }
 
 @mixin gradient-vertical($startColor: #555, $endColor: #333) {
