@@ -9,6 +9,6 @@
     .form-actions
       %div{:style => "float: left"}
         = f.submit "Save", :class => "btn btn-large btn-primary", :id => "submit"
-        = f.submit "Cancel", :class => "btn btn-large", :id => "submit"
+        = link_to "Cancel", "/posts", :class => "btn btn-large"
       %div{:style => "float: right"}
         = button_to "Delete", post_path(@post), :class => "btn btn-large", :id => "submit", :method => "delete"

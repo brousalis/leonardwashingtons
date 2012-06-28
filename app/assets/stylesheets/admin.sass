@@ -2,11 +2,20 @@
 
 $form-margin: 20px
 
-body
-  font-family: proxima-nova
-
 .container
   margin-top: 80px
+
+h1 
+  border-bottom: 5px solid #f2f2f2
+  padding-bottom: 5px
+  margin-bottom: 15px
+
+.btn
+  font-weight: bold !important
+
+a
+  &:hover 
+    text-decoration: none
 
 .well
   +border-radius(0px 0px 9px 9px !important)
@@ -15,7 +24,6 @@ body
   padding: 15px !important
 
 .form-horizontal
-  padding-top: $form-margin
   &, .control-label
     width: auto !important
     font-size: 18px
@@ -25,8 +33,8 @@ body
     font-weight: bold
 
 .input-xlarge 
-  margin: 0px $form-margin
-  width: 700px - ($form-margin * 2) !important
+  margin: 0px 
+  width: 700px !important
   font-size: 18px !important
   padding: 9px
   +box-shadow(none)
@@ -35,11 +43,23 @@ body
     border: 1px solid #f2f2f2
     +box-shadow(none)
 
+table 
+  font-size: 16px
+  form
+    margin: 0 !important
+    padding: 0 !important
+  .btn
+    padding-top: 0px !important
+    padding-bottom: 0px !important
+    font-weight: normal !important
+  .right
+    text-align: right !important
+
 .placeholder
   color: #aaa
 
 #post_content
-  min-height: 700px !important
+  min-height: 500px !important
   line-height: 22px
 
 .top

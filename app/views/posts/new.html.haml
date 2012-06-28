@@ -1,3 +1,4 @@
+%h1 New blog post
 = form_for @post, :class => "form-horizontal" do |f|
   %fieldset
     .control-group
@@ -8,3 +9,4 @@
         = f.text_area :content, :class => "input-xlarge", :placeholder => "body"
     .form-actions
       %button.btn.btn-large.btn-primary{:id => "submit", :type => "submit"} Submit post
+      = link_to "Cancel", "/posts", :class => "btn btn-large"

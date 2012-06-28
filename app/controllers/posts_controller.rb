@@ -15,7 +15,6 @@ class PostsController < ApplicationController
 
   def update
     @post = Post.find(params[:id])
-   
     respond_to do |format|
       if @post.update_attributes(params[:post])
         format.html  { redirect_to('/posts',
@@ -28,15 +27,6 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
-  end 
-
-  def destroy
-    @post = Post.find(params[:id])
-    @post.destroy
-    respond_to do |format|
-      format.html  { redirect_to('/posts',
-                    :notice => 'Post was successfully updated.') }
-    end
   end
 
   def create
@@ -54,7 +44,6 @@ class PostsController < ApplicationController
   def show
     @post = Post.find_by_id(params[:id])
     @markdown = RDiscount.new(@post.content)
-
     respond_to do |format|
       format.json {
         render :json => {"name" => @post.name, "date" => format_date(@post.created_at), "picture" => @post.picture, "content" => @markdown.to_html }
@@ -62,9 +51,18 @@ class PostsController < ApplicationController
     end
   end
 
+  def destroy
+    @post = Post.find(params[:id])
+    @post.destroy
+    respond_to do |format|
+      format.html  { redirect_to('/posts',
+                    :notice => 'Post was successfully updated.') }
+    end
+  end
+
   private
 
   def format_date(datetime)
     return datetime.strftime("%d/%m/%Y %l:%m %p")
-  end 
+  end
 end

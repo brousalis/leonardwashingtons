@@ -6,6 +6,7 @@ gem 'rdiscount'
 gem "therubyracer"
 gem "jquery-rails"
 gem 'net-ssh'
+gem 'paperclip', '2.7.0'
 
 group :development do
   gem 'pg'
