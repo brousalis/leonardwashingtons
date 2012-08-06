@@ -1,0 +1,16 @@
+%h1 Add new slide
+= form_for @slide, :html => { :multipart => true } do |form|
+  %fieldset
+    .control-group
+      .controls
+        = form.file_field :picture
+    .control-group
+      .controls
+        %p 
+          The image used on the website is
+          %strong 960px by 410px
+%h1{:style => "margin-top: 40px;"} Slides
+.slides
+  - @slides.each do |slide|
+    .image{:style => "background: url(#{slide.picture.url(:large)})"}
+      = button_to "Delete", slide_path(slide), :class => "delete btn btn-danger", :method => "delete"

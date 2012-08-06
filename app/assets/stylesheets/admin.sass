@@ -1,4 +1,5 @@
 @import bootstrap
+@import google-buttons
 
 $form-margin: 20px
 
@@ -12,7 +13,7 @@ h1
 
 .btn
   font-weight: bold !important
-
+  +border-radius(4px)
 a
   &:hover 
     text-decoration: none
@@ -73,4 +74,14 @@ table
     font-weight: bold
     font-size: 14px
 
+.slides
+  .image
+    width: 700px
+    height: 410px
+    display: block
+    position: relative
+    margin-bottom: 20px
 
+    form
+      float: right
+      margin: 10px

@@ -16,9 +16,8 @@
   #main
     #top
       #slider
-        = image_tag("1.png")
-        = image_tag("2.png")
-        = image_tag("3.png")
+        - Slide.find(:all, :limit => 3, :order => 'created_at ASC').each do |slide|
+          %img{:src => "#{slide.picture.url(:large)}"}
       .clearfix
       #ajax
         %span.back
@@ -44,7 +43,7 @@
           %a{:href => "http://www.kickstarter.com/projects/887391720/the-leonard-washingtons-debut-lp"}
             .artwork
               %span
-              %img{:src => "/assets/kickstarter_ad.jpg"}/
+              %img{:src => "/assets/album_case.png"}/
         #player.column
           #jplayer_container
             #jquery_jplayer_1.jp-jplayer

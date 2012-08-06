@@ -6,10 +6,13 @@ gem 'rdiscount'
 gem "therubyracer"
 gem "jquery-rails"
 gem 'net-ssh'
+gem 'acts_as_list'
 gem 'paperclip', '2.7.0'
 
 group :development do
   gem 'pg'
+  gem 'guard'
+  gem 'guard-livereload'
 end
 
 group :production do
@@ -20,6 +23,7 @@ group :assets do
   gem "haml", ">= 3.0.0"
   gem 'sass-rails', '~> 3.1'
   gem 'bootstrap-sass', '~> 2.0.2'
+  gem 'google-buttons-sass'
   gem 'uglifier', '>= 1.0.3'
 end
 

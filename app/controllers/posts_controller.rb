@@ -1,8 +1,9 @@
 class PostsController < ApplicationController
+  before_filter :authenticate, :except => :show
   layout 'admin'
 
   def index
-    @posts = Post.all
+    @posts = Post.find(:all, :order => "created_at DESC")
     respond_to do |format|
       format.html  
       format.json  { render :json => @posts }
@@ -63,6 +64,6 @@ class PostsController < ApplicationController
   private
 
   def format_date(datetime)
-    return datetime.strftime("%d/%m/%Y %l:%m %p")
+    return datetime.strftime("%m/%d/%Y %l:%m %p")
   end
 end

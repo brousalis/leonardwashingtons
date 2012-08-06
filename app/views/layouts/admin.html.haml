@@ -7,6 +7,7 @@
     %meta{:content => "The Leonard Washingtons, a funky jam-band from Terre Haute, IN ", :name => "description"}
     %meta{:content => "Pete Brousalis - brousalis.com", :name => "author"}
     %meta{:content => "width=device-width,initial-scale=1", :name => "viewport"}
+    = javascript_include_tag "admin"
     = stylesheet_link_tag "admin"
     %script{:src => "http://use.typekit.com/iui1xgf.js", :type => "text/javascript"}
     :javascript
@@ -21,9 +22,9 @@
             %ul.nav.nav-list
               %li.nav-header Homepage
               %li
-                %a{:href => "/admin/slideshow"}
-                  %i.icon-home
-                  Slideshow images
+                %a{:href => "/slides"}
+                  %i.icon-film
+                  Manage images
               %li.nav-header Blog
               %li
                 %a{:href => "/posts/new"}
@@ -33,6 +34,15 @@
                 %a{:href => "/posts"}
                   %i.icon-edit
                   Edit/delete posts
+              %li.nav-header Newsletter
+              %li
+                %a{:href => "/posts"}
+                  %i.icon-user
+                  Manager users
+              %li
+                %a{:href => "/posts"}
+                  %i.icon-envelope
+                  Send e-mail
               %li.nav-header About
               %li
                 %a{:href => "/admin/edit/about_us"}
