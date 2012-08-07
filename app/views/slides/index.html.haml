@@ -1,15 +1,18 @@
 %h1 Add new slide
+- flash.each do |name, msg|
+  .alert.info= msg
 = form_for @slide, :html => { :multipart => true } do |form|
   %fieldset
-    .control-group
-      .controls
-        = form.file_field :picture
     .control-group
       .controls
         %p 
           The image used on the website is
           %strong 960px by 410px
+    .control-group
+      .controls
+        = form.file_field :picture
 %h1{:style => "margin-top: 40px;"} Slides
+%p The slides will be shown in order from top to bottom:
 .slides
   - @slides.each do |slide|
     .image{:style => "background: url(#{slide.picture.url(:large)})"}

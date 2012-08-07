@@ -19,7 +19,7 @@ class SlidesController < ApplicationController
     respond_to do |format|
       if @slide.save
         format.html  { redirect_to('/slides',
-                      :notice => 'Slide was successfully created.') }
+                      :notice => 'Slide was successfully added.') }
       else
         format.html  { render :action => "new" }
       end

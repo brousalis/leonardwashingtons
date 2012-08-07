@@ -10,4 +10,5 @@ $(document).ready(function() {
   $('#slide_picture').live('change', function() {
     $('#new_slide').submit();
   });
+
 });
