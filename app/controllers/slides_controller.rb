@@ -21,7 +21,8 @@ class SlidesController < ApplicationController
         format.html  { redirect_to('/slides',
                       :notice => 'Slide was successfully added.') }
       else
-        format.html  { render :action => "new" }
+        format.html  { redirect_to('/slides',
+                      :notice => @slide.errors.full_messages) }
       end
     end 
   end

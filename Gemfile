@@ -11,8 +11,6 @@ gem 'paperclip', '2.7.0'
 
 group :development do
   gem 'pg'
-  gem 'guard'
-  gem 'guard-livereload'
 end
 
 group :production do
