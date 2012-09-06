@@ -5,4 +5,7 @@ Leonards::Application.routes.draw do
   resources :posts
   resources :newsletter
   resources :admin
+  resources :shows
+  resources :songs
+  resources :contents
 end

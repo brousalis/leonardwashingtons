@@ -1,0 +1,42 @@
+#social-wrapper
+  #shows
+    - Show.find(:all, :limit => 2, :order => 'date ASC').each do |show|
+      .show
+        .image
+          %img{:src => show.picture.url(:large)}/
+          .date
+            %span.month= show.date.strftime("%b")
+            %span.day= show.date.day
+            %span.year= show.date.year
+          %a{:href => "#"} 
+          .overlay
+        .content
+          %h3
+            = show.venue
+            %span= show.city
+          %span.meta
+            %span.address 
+              %i.icon.icon-map-marker
+              = show.address
+            %span.time 
+              %i.icon.icon-time
+              = show.time.strftime("%H:%M")
+    %h2.shows See all our upcoming shows
+  #social
+    %h2 Newsletter
+    .content
+      %p.status 
+        Sign up for our newsletter and get a free download of our newest single
+        %span Miss Massey
+    %input#newsletter{:value => "email address"}
+    .share
+      %ul
+        %li
+          %a.facebook{:href => "http://facebook.com/theleonardwashingtons"} Facebook
+        %li
+          %a.twitter{:href => "http://twitter.com/theleonards"} Twitter
+        %li.bottom
+          %a.soundcloud{:href => "http://soundcloud.com/tlws"} Soundcloud
+        %li.bottom
+          %a.bandcamp{:href => "http://theleonardwashingtons.bandcamp.com/"} Bandcamp
+.clearfix

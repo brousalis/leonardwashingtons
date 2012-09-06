@@ -43,12 +43,9 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.find_by_id(params[:id])
-    @markdown = RDiscount.new(@post.content)
+    @post = Post.find(params[:id])
     respond_to do |format|
-      format.json {
-        render :json => {"name" => @post.name, "date" => format_date(@post.created_at), "picture" => @post.picture, "content" => @markdown.to_html }
-      }
+      format.js {}
     end
   end
 

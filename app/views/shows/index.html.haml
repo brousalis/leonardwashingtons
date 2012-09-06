@@ -1,0 +1,63 @@
+%h1{:style => "margin-bottom: 22px"} Add new show
+- flash.each do |name, msg|
+  .alert.info= msg
+= form_for @show, :html => { :multipart => true } do |form|
+  %fieldset
+    .control-group
+      %label.control-label{:for => "venue"} Venue
+      .controls
+        = form.text_field :venue
+    .control-group
+      %label.control-label{:for => "city"} City
+      .controls
+        = form.text_field :city
+    .control-group
+      %label.control-label{:for => "address"} Address
+      .controls
+        = form.text_field :address
+    .control-group
+      %label.control-label{:for => "date"} Date
+      .controls
+        %input#date{:name => "date", :type => "text", :value => "#{Date.today.strftime("%m/%d/%Y")}"}/
+    .control-group
+      %label.control-label{:for => "time"} Time
+      .controls
+        = form.text_field :time
+    .control-group
+      %label.control-label{:for => "facebook"} Facebook event
+      .controls
+        = form.text_field :facebook
+    .control-group                           
+      .controls
+        %p 
+          The image used on the website is
+          %strong 170px by 120px
+    .control-group
+      .controls
+        = form.file_field :picture
+    .form-actions
+      %button.btn.btn-large.btn-primary{:id => "submit", :type => "submit"} Submit show
+
+%h1{:style => "margin-top: 40px;"} Shows
+%p The shows will be shown in order from top to bottom:
+#shows
+  - @shows.each do |show|
+    %hr
+    .show
+      = button_to "Delete", show_path(show), :class => "delete btn btn-danger", :method => "delete", :style => "float:right"
+      .image{:style => "float:left;margin-right: 10px"}
+        %img{:src => show.picture.url(:large)}/
+      .content
+        %h3
+          = show.venue
+          %span= show.city
+        .date
+          = show.date.strftime("%m/%d/%Y")
+        %span.meta
+          %div.address 
+            %i.icon-map-marker
+            = show.address
+          %div.time 
+            %i.icon-time
+            = show.time.strftime("%l:%M %p")
+    .clearfix

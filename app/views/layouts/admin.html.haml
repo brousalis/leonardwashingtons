@@ -34,37 +34,33 @@
                 %a{:href => "/posts"}
                   %i.icon-edit
                   Edit/delete posts
-              %li.nav-header Newsletter
+              %li.nav-header Shows
               %li
-                %a{:href => "/posts"}
-                  %i.icon-user
-                  Manager users
-              %li
-                %a{:href => "/posts"}
-                  %i.icon-envelope
-                  Send e-mail
+                %a{:href => "/shows"}
+                  %i.icon-calendar
+                  Manage shows 
               %li.nav-header About
               %li
-                %a{:href => "/admin/edit/about_us"}
+                %a{:href => "/contents/1"}
                   %i.icon-edit
                   Edit about us
               %li
-                %a{:href => "/admin/edit/our_sound"}
+                %a{:href => "/contents/2"}
                   %i.icon-edit
                   Edit our sound
               %li.nav-header Music
               %li
-                %a{:href => "/admin/music/"}
+                %a{:href => "/songs"}
                   %i.icon-music
                   Player
-              %li.nav-header Shows
+              %li.nav-header Newsletter
               %li
-                %a{:href => "/admin/shows/new"}
-                  %i.icon-calendar
-                  Add show
+                %a{:href => "/posts"}
+                  %i.icon-user
+                  Manager users 
               %li
-                %a{:href => "/admin/shows/"}
-                  %i.icon-edit
-                  Edit/delete shows
+                %a{:href => "/posts"}
+                  %i.icon-envelope
+                  Send e-mail 
         .span9
           = yield

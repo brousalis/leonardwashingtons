@@ -1,0 +1,21 @@
+%h1 Add new song
+- flash.each do |name, msg|
+  .alert.info= msg
+= form_for @song, :html => { :multipart => true } do |form|
+  %fieldset
+    .control-group
+      %label.control-label{:for => "Title"} Title
+      .controls
+        = form.text_field :title
+    .control-group
+      .controls
+        = form.file_field :track
+    .form-actions
+      %button.btn.btn-large.btn-primary{:id => "submit", :type => "submit"} Submit song
+%h1{:style => "margin-top: 40px;"} Songs
+%p The songs will be shown in order from top to bottom:
+.songs
+  - @songs.each do |song|
+    %h2 
+      = button_to "Delete", song_path(song), :class => "delete btn btn-danger", :method => "delete", :style => "float: left; margin-right: 15px; margin-top: 5px"
+      #{song.title} (#{song.track_file_name})

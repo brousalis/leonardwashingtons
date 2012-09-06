@@ -1,0 +1,12 @@
+%h1= @content.name.humanize
+= form_for @content, :class => "form-horizontal" do |f|
+  %fieldset
+    .control-group
+      .controls
+        = f.text_area :content, :class => "input-xlarge", :placeholder => "body", :value => @content.content
+    .form-actions
+      %div{:style => "float: left"}
+        = f.submit "Save", :class => "btn btn-large btn-primary", :id => "submit"
+        = link_to "Cancel", "/admin", :class => "btn btn-large"
+      %div{:style => "float: right"}
+        = button_to "Delete", content_path(@content), :class => "delete btn btn-large", :id => "submit", :method => "delete" 

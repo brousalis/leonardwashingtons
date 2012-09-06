@@ -8,6 +8,7 @@ gem "jquery-rails"
 gem 'net-ssh'
 gem 'acts_as_list'
 gem 'paperclip', '2.7.0'
+gem 'mime-types'
 
 group :development do
   gem 'pg'
@@ -19,6 +20,8 @@ end
 
 group :assets do
   gem "haml", ">= 3.0.0"
+  gem 'jquery-rails'
+  gem 'jquery-ui-rails'
   gem 'sass-rails', '~> 3.1'
   gem 'bootstrap-sass', '~> 2.0.2'
   gem 'google-buttons-sass'

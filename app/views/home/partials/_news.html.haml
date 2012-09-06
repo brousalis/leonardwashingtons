@@ -1,0 +1,11 @@
+#news.column        
+  %h2
+    Recent
+    %span News
+  - Post.find(:all, :limit => 2, :order => 'created_at DESC').each do |post|
+    .content
+      %a.post{:href => "posts/#{post.id}"}
+        %h3 
+          #{post.name}
+          %span #{format_date(post.created_at)}
+        %p #{truncate(post.content, 65)} 
