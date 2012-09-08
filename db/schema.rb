@@ -39,9 +39,9 @@ ActiveRecord::Schema.define(:version => 20120814023029) do
     t.string   "address"
     t.datetime "created_at",           :null => false
     t.datetime "updated_at",           :null => false
-    t.integer  "picture_file_size"
     t.datetime "picture_updated_at"
     t.string   "picture_content_type"
+    t.integer  "picture_file_size"
     t.string   "picture_file_name"
     t.string   "facebook"
     t.datetime "time"
@@ -49,9 +49,9 @@ ActiveRecord::Schema.define(:version => 20120814023029) do
   end
 
   create_table "slides", :force => true do |t|
-    t.integer  "picture_file_size"
     t.datetime "picture_updated_at"
     t.string   "picture_content_type"
+    t.integer  "picture_file_size"
     t.string   "picture_file_name"
     t.datetime "created_at",           :null => false
     t.datetime "updated_at",           :null => false
