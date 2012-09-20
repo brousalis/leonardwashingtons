@@ -1,9 +1,11 @@
 #ajax_post
   .sidebar
+    %h3 Recent posts
     %ul.posts
       - Post.all.each do |item|
         %li
           = link_to item.name, item, :remote => true
+
   .post
     %h3.title
       = post.name

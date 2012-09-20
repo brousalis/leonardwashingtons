@@ -4,7 +4,7 @@
     %span News
   - Post.find(:all, :limit => 2, :order => 'created_at DESC').each do |post|
     .content
-      %a.post{:href => "posts/#{post.id}"}
+      %a.post{:href => "posts/#{post.id}", :"data-remote" => "true"}
         %h3 
           #{post.name}
           %span #{format_date(post.created_at)}

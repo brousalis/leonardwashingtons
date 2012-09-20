@@ -5,6 +5,7 @@
     color: #fff
     font-size: 2.5em
     padding: 0 20px
+    font-weight: 500
 
     span 
       font-weight: normal
@@ -15,29 +16,40 @@
       color: #aaa
       font-size: 0.8em
 
-  .picture
-    float: left
-    margin-left: -300px
-    margin-right: 30px
-    width: 550px
-    height: 600px
-    +opacity(.8)
-    +transition(.3s all linear)
-    +border-radius(0px 0px 20px 0px)
-
-    &:hover
-      +opacity(1)
-
   .sidebar
     float: left
     width: 210px
-    margin-top: 30px
+    margin-top: 20px
+    +opacity(.8)
+    +border-radius(0px 0px 20px 0px)
+    height: 400px
+
+    .tweets
+      
+      .link
+        background: black url(images/sprite.png) 104% -196px no-repeat
+        border-bottom: none
+        +border-radius(3px)
+        font-size: 13px
+        padding: 4px 32px 4px 10px
+        +transition(#{background-color .2s ease, color .2s ease})
+        display: inline-block
+
+    h3
+      font-family: proxima-nova-extra-condensed
+      text-transform: uppercase
+      font-weight: 500
+      font-size: 30px
+      margin: 0
+      padding-left: 14px
+      margin-bottom: 10px
+      color: #549C95
 
     ul
       padding: 0
       margin: 0
       li
-        background: rgba(0,0,0,0.4)
+        background: rgba(0,0,0,0.2)
         list-style-type: none
         padding: 10px
         margin-bottom: 3px
@@ -46,7 +58,7 @@
 
         &:hover 
           background: rgba(0,0,0,0.5)
-          color: #333
+          color: #555
 
         &.active
           color: #fff
