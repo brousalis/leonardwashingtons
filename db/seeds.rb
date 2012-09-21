@@ -3,7 +3,6 @@ Song.create(:title => "Cricket", :mp3 => "http://theleonardwashingtons.com/Crick
 Song.create(:title => "And I Dreamt Of You", :mp3 => "http://theleonardwashingtons.com/And.mp3", :oga => "")
 Song.create(:title => "Mamacita", :mp3 => "http://theleonardwashingtons.com/Mamacita.mp3", :oga => "" )
 Song.create(:title => "Why Are You Such A Bitch", :mp3 => "http://theleonardwashingtons.com/Why.mp3", :oga => "")
-Song.create(:title => "Elenor Rigby > Breath", :mp3 => "", :oga => "")
 
 # content keys
 about_us = Content.create(:name => "about_us",
