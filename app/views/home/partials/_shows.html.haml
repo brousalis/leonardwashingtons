@@ -20,8 +20,9 @@
               = show.address
             %span.time 
               %i.icon.icon-time
-              = show.time.strftime("%I:%M")
-    %h2.shows See all our upcoming shows
+              = show.time.strftime("%I:%M %p")
+    %h2.shows 
+      %a.shows_table{:href => "#"} See all our upcoming shows
   #social
     %h2 Newsletter
     .content

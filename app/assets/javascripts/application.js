@@ -67,7 +67,7 @@ $(document).ready(function(){
     close_content(); 
   });
 
-  $('nav li a').live('click', function(e) {
+  $('nav li a, h2.shows a').live('click', function(e) {
     e.preventDefault();
     page = $(this).attr('class')
     $('[id^="ajax_"]').hide();
