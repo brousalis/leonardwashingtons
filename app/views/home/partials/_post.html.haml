@@ -1,14 +1,13 @@
-#ajax_post
-  .sidebar
-    %h3 Recent posts
-    %ul.posts
-      - Post.all.each do |item|
-        %li
-          = link_to item.name, item, :remote => true
+.sidebar
+  %h3 Recent posts
+  %ul.posts
+    - Post.all.each do |item|
+      %li{:class => ("selected" if item.name == post.name)}
+        = link_to item.name, item, :remote => true
 
-  .post
-    %h3.title
-      = post.name
-      %span= format_date(post.created_at)
-    .content 
-      = format_content(post.content).html_safe
+.post
+  %h3.title
+    = post.name
+    %span= format_date(post.created_at)
+  .content 
+    = format_content(post.content).html_safe

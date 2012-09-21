@@ -8,4 +8,7 @@ Leonards::Application.routes.draw do
   resources :shows
   resources :songs
   resources :contents
+
+  match 'contact' => 'contact#new', :as => 'contact', :via => :get
+  match 'contact' => 'contact#create', :as => 'contact', :via => :post
 end

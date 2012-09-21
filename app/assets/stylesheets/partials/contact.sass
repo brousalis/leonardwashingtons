@@ -1,0 +1,96 @@
+#ajax_contact
+  margin-top: 30px
+
+  h1
+    font-family: proxima-nova-extra-condensed
+    color: #fff
+    font-weight: 500
+    font-size: 3.4em
+    text-transform: uppercase
+    background: #000
+    display: inline
+    padding: 3px 30px
+    position: relative
+    margin-top: 10px
+  form
+    margin-top: 30px
+
+    .errors
+      display: none 
+
+    .details
+      float: right
+      width: 280px
+      margin-right: 20px
+
+    .message
+      float: left
+      width: 630px
+      position: relative
+
+    .errors
+      padding-left: 20px
+      font-size: 14px 
+      color: #fff
+
+    p
+      margin: 0
+      padding: 20px 20px 20px 20px
+      color: #444
+      font-size: 18px
+
+      i
+        +opacity(0.1)
+        margin-top: 2px
+
+    input, textarea
+      &.error
+        border-left: 4px red solid
+
+    textarea
+      width: 580px
+      display: block
+      height: 177px
+      resize: none
+      background: rgba(0,0,0,0.5)
+      border: none
+      outline: none
+      color: #fff
+      padding: 20px
+      font-size: 18px
+      +border-radius(8px)
+      +transition(all 0.3s linear)
+      margin-left: 20px
+
+      &:focus
+        background: #000
+
+    input
+      display: block
+      width: 280px
+      border: none
+      border-left: $yellow solid 4px
+      background-color: rgba(0,0,0,0.5)
+      +border-radius(8px)
+      +transition(background .3s linear)
+      box-sizing: border-box
+      -moz-box-sizing: border-box
+      padding: 8px 18px
+      line-height: 30px
+      outline: none
+      resize: none
+      color: #fff
+      font-size: 18px
+      margin-bottom: 12px
+
+      &:focus
+        border-left: $teal solid 4px
+        background-color: #000
+
+    input[type=submit]
+      border-left: none
+      height: 98px
+      display: inline-block
+      overflow: hidden
+      cursor: pointer
+      background: #000 

@@ -8,6 +8,7 @@ $(document).ready(function(){
                       advanceSpeed: 5000}); 
 
   // newsletter input
+  $('#ajax_contact input').input_focus();
   $('#newsletter').input_focus().keypress(function(e){
     if(e.which == 13) {
       $('#newsletter').addClass('loading');
@@ -32,7 +33,7 @@ $(document).ready(function(){
     onMouseLeave : function( el ) { el.removeClass('meet-circle-hover'); },
     onClick : function( el ) { 
       $('#about_container').fadeOut(); 
-      $('#meet_container').delay(800).fadeIn();
+      $('#ajax_meet').delay(800).fadeIn();
       $('.close').fadeOut();
       $('.back').delay(800).fadeIn();
       return false;
@@ -43,7 +44,7 @@ $(document).ready(function(){
   $('.back').live('click', function(e) {
     e.preventDefault();
     $('#about_container').delay(800).fadeIn(); 
-    $('#meet_container').fadeOut();
+    $('#ajax_meet').fadeOut();
     $('.close').delay(800).fadeIn();
     $('.back').fadeOut(); 
   });
@@ -66,13 +67,23 @@ $(document).ready(function(){
     close_content(); 
   });
 
-  $('.about').live('click', function(e) {
+  $('nav li a').live('click', function(e) {
     e.preventDefault();
-    open_content(400);
+    page = $(this).attr('class')
     $('[id^="ajax_"]').hide();
-    $('#ajax_about').delay(800).fadeIn();
+    open_content(400);
+    $('#ajax_'+page).fadeIn(800);
   });
 
+  $('[id^="ajax_"]').hide();
+
+  $('#new_message').validate({
+    errorPlacement: function(error, element) { 
+    }, 
+    invalidHandler: function(e, validator) {
+      var errors = validator.numberOfInvalids()
+    }
+  });
 });
 
 $.fn.input_focus = function() {
@@ -96,12 +107,11 @@ function open_content(height) {
   }
 
   setTimeout(function(){ 
-    if(height == 0) height = $('.post .title').height() + $('.post .content').height() + 60,
-    $('#top').animate({height: height + "px"}, 800); 
+    if(height == 0) height = $('.post .title').height() + $('.post .content').height() + 60
+    $('#top').animate({height: height + "px"}, 600); 
   }, 50);
 
   $('#ajax').fadeIn();
-  $('#ajax_post .post').fadeIn(800);
 }
 
 function close_content() {

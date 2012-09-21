@@ -1,0 +1,14 @@
+#ajax_contact
+  %h1 Contact us
+  = form_for @message, :url => contact_path do |form|
+    .errors There were problems sending the e-mail! Please try again
+    .message
+      = form.text_area :body, :class => "required"
+      %p
+        %i.icon.icon-heart.icon-white
+        We'll get back to you as soon as we can!
+    .details
+      = form.text_field :name, :value => "name", :placeholder => "name", :class => "required"
+      = form.text_field :email, :value => "email", :placeholder => "email", :class => "required email"
+      = form.text_field :subject, :value => "contact form", :style => "display: none"
+      = form.submit "Send"

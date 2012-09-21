@@ -1,0 +1,22 @@
+#ajax_shows_table
+  %h1 
+    Upcoming Shows
+    %p
+      For any inqueries, please 
+      %a{:href => "mailto:theleonardwashingtons@gmail.com"} e-mail us
+  %ul
+    - Show.find(:all, :order => 'date DESC').each do |show|
+      %li{:class => ("past" if show.date.past?)}
+        %span.date
+          %i.icon.icon-white.icon-calendar
+          = show.date.strftime("%m/%d/%Y").sub("0","")
+        %span.time
+          %i.icon.icon-white.icon-time
+          = show.time.strftime("%I:%M %p").sub("0","")
+        %span.venue
+          %i.icon.icon-white.icon-map-marker
+          #{show.venue},
+          = show.address
+        - if show.facebook && show.date.future?
+          %span.facebook
+            %a{:href => "#{show.facebook}"}

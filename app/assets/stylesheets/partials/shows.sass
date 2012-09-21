@@ -1,0 +1,72 @@
+#ajax_shows_table
+  position: relative
+  margin-top: 30px
+
+  h1
+    font-family: proxima-nova-extra-condensed
+    color: #fff
+    font-weight: 500
+    font-size: 3.4em
+    text-transform: uppercase
+    background: #000
+    display: inline
+    padding: 3px 30px
+    position: relative
+    margin-top: 10px
+
+    p
+      margin-top: 5px
+      margin-right: 80px
+      float: right
+      color: #ddd
+      font-size: 18px
+      +opacity(0.5)
+
+      a:hover
+        color: #999
+  ul
+    margin: 0
+    margin-top: 3px
+    padding: 0
+    list-style: none
+
+    li
+      margin-bottom: 5px
+      padding: 10px
+      padding-left: 30px
+
+      &.past
+        +opacity(0.1 !important)
+
+      span
+        font-size: 22px
+        color: #aaa
+        margin-right: 20px
+        
+        strong
+          font-weight: normal
+          +opacity(0.5)
+
+        i
+          margin-top: 6px
+          margin-right: 3px
+          +opacity(0.5)
+
+        &.facebook
+          a
+            text-indent: 9999px
+            display: block
+            float: right
+            width: 30px
+            height: 30px
+            margin-right: 23px
+            background: image-url('f.png') no-repeat
+            +transition(0.3s all linear)
+            
+            &:hover
+              +opacity(0.7)
+
+      &:nth-child(2n-3)
+        background: image-url('bg-dark.png')
+        +opacity(.5)
+

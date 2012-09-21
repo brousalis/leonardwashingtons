@@ -4,11 +4,11 @@
       %a{:href => "#"} TLW
     %nav
       %li
-        %a.home{:href => "#"} Home
+        %a.home{:href => "#"}Home
       %li
         %a.about{:href => "#"} About
       %li
-        %a.shows{:href => "#"} Shows
+        %a.shows_table{:href => "#"} Shows
       %li
         %a.music{:href => "http://itunes.apple.com/us/album/introducing../id427752485"} Music
       %li
@@ -16,16 +16,16 @@
   #main
     #top
       #slider
-        - Slide.find(:all, :limit => 3, :order => 'created_at ASC').each do |slide|
+        - Slide.find(:all, :order => 'created_at DESC').each do |slide|
           %img{:src => "#{slide.picture.url(:large)}"}
       .clearfix
       #ajax
-        %span.back
-          %a{:href => "#"} go back
         %span.close
           %a{:href => "#"} X
-        .content
-          = render :partial => '/home/partials/about'
+        #ajax_post
+        = render :partial => '/home/partials/about'
+        = render :partial => '/home/partials/shows_table'
+        = render :template => '/contact/new'
     #content
       .columns
         = render :partial => "/home/partials/news"

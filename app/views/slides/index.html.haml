@@ -14,6 +14,6 @@
 %h1{:style => "margin-top: 40px;"} Slides
 %p The slides will be shown in order from top to bottom:
 .slides
-  - @slides.each do |slide|
+  - @slides.reverse.each do |slide|
     .image{:style => "background: url(#{slide.picture.url(:large)})"}
       = button_to "Delete", slide_path(slide), :class => "delete btn btn-danger", :method => "delete"

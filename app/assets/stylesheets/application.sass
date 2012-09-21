@@ -13,6 +13,8 @@ $show-width: 597px
 @import partials/home
 @import partials/posts
 @import partials/about
+@import partials/shows
+@import partials/contact
 
 @import lib/jplayer
 @import lib/orbit
@@ -139,9 +141,9 @@ header
         cursor: pointer
         display: none
         font-family: proxima-nova-extra-condensed
-        font-size: 1.9em
+        font-size: 1em !important
         text-transform: uppercase
-        padding: 3px 8px
+        padding: 2px 7px
         background: #000
         +opacity(.5)
         +border-radius(4px)
@@ -227,11 +229,23 @@ header
   background-repeat: no-repeat
 
 .icon-white 
-  background-image: image-url('icon-white.png')
+  background-image: image-url('icons-white.png')
 
 .icon-time                
   background-position: -48px  -24px 
 
 .icon-map-marker          
   background-position: -24px  -72px 
+
+.icon-star
+  background-position: -120px 0
+
+.icon-calendar 
+  background-position: -192px -120px
+
+.icon-heart
+  background-position: -96px 0
+
+.icon-send
+  background-position: -456px -72px
 

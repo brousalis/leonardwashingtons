@@ -1,4 +1,5 @@
-$('#ajax .content').html("<%= escape_javascript(render :partial => "/home/partials/post", :locals => {:post => @post}) %>")
-$('#ajax_post .post').hide();
+$('[id^="ajax_"]').hide();
+$('#ajax_post').html("<%= escape_javascript(render :partial => "/home/partials/post", :locals => {:post => @post}) %>")
+$('#ajax_post').hide();
 open_content();
-
+$('#ajax_post').fadeIn(800);

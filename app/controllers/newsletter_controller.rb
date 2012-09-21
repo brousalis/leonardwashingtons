@@ -9,9 +9,11 @@ class NewsletterController < ApplicationController
 
     respond_to do |format|
       if success 
+        @message = Message.new(:email => params[:email])
+        MusicMailer.new_message(@message).deliver
         format.json {
           render :json => {"status" => "success",
-                           "message" => "<span class='success'>Success!</span> Thank you for signing up! <div><a href='/Miss_Massey.mp3'>Click here to download Miss Massey</a></div>"}
+                           "message" => "<span class='success'>Success!</span> Thank you for signing up!"}
         }
       else
         format.json {

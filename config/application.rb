@@ -45,5 +45,19 @@ module Leonards
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+
+    config.action_mailer.smtp_settings = {
+      :address              => "smtp.gmail.com",
+      :port                 => 587,
+      :domain               => "theleonardwashingtons.com",
+      :user_name            => "theleonardwashingtons@gmail.com",
+      :password             => "r3cycle",
+      :authentication       => :plain,
+      :enable_starttls_auto => true
+    }
+
+    config.action_mailer.default_url_options = {
+      :host => "theleonardwashingtons.com"
+    }
   end
 end
