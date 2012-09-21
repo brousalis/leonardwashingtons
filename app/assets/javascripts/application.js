@@ -67,7 +67,10 @@ $(document).ready(function(){
     close_content(); 
   });
 
-  $('nav li a, h2.shows a').live('click', function(e) {
+  $('h2.shows a').live('click', function(e) {
+    $('html body').animate({ scrollTop: 150 },800);
+  });
+  $('nav li a.shows_table, nav li a.about, nav li a.contact, h2.shows a').live('click', function(e) {
     e.preventDefault();
     page = $(this).attr('class')
     $('[id^="ajax_"]').hide();
